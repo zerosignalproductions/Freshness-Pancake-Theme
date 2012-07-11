@@ -16,11 +16,12 @@ Download the zip file and simply unzip into your **third_party** directory.
 [![Settings](http://i.imgur.com/mV3ams.png)](http://i.imgur.com/mV3am.png)
 [![Login](http://i.imgur.com/XoTSXs.png)](http://i.imgur.com/XoTSX.png)
 
+
 ##Buy Me A Cup of Coffee##
 
 I put a lot of time and work into my free themes so feel free to donate some money to keep the caffeine flowing and high quality skins coming!
 
-[![test](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](ttps://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=sales%40zerosignalproductions%2ecom&lc=US&item_name=Zero%20Signal%20Productions&amount=10%2e00&currency_code=USD&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest)
+[![test](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=sales%40zerosignalproductions%2ecom&lc=US&item_name=Zero%20Signal%20Productions&amount=10%2e00&currency_code=USD&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest)
 
 ## TODO ##
 * Front-end Theming

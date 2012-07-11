@@ -72,10 +72,7 @@
 			</div><!-- /header end -->
             <div id="nav-container" class="clearfix">
                 <ul id="nav">
-                    
-                    
                     <li<?php echo ($module == 'dashboard') ? ' class="active"' : ''; ?>><?php echo anchor('admin', __('global:dashboard')); ?></li>
-                    
                     
                     <?php if (is_admin() or isset($this->permissions['invoices'])): ?>
                     <li class="<?php echo ($module == 'invoices' and substr($this->uri->uri_string(), 6, 9) != 'estimates') ? 'active ' : ''; ?>subnav">
