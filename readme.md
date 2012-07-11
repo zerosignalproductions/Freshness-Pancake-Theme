@@ -16,6 +16,8 @@ Download the zip file and simply unzip into your **third_party** directory.
 [![Settings](http://i.imgur.com/mV3ams.png)](http://i.imgur.com/mV3am.png)
 [![Login](http://i.imgur.com/iilRGs.png)](http://i.imgur.com/XoTSX.png)
 
+![test](http://i.imgur.com/iilRGs.png)
+
 ##Buy Me A Cup of Coffee##
 
 I put a lot of time and work into my free themes so feel free to donate some money to keep the caffeine flowing and high quality skins coming!
