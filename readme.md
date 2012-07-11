@@ -9,12 +9,14 @@ Download the zip file and simply unzip into your **third_party** directory.
 
 ## Screenshots ##
 
-[Dashboard](http://i.imgur.com/mO6Fss.png)
+[Dashboard](http://i.imgur.com/mO6Fs.png)
 [Invoices](http://i.imgur.com/z7Kck.png)
-[Reports](http://i.imgur.com/PXKrJs.png)
-[Estimates](http://i.imgur.com/cM2ZCs.png)
-[Settings](http://i.imgur.com/mV3ams.png)
-[Login](http://i.imgur.com/iilRGs.png)
+[Reports](http://i.imgur.com/PXKrJ.png)
+[Estimates](http://i.imgur.com/cM2ZC.png)
+[Settings](http://i.imgur.com/mV3am.png)
+[Login](http://i.imgur.com/iilRG.png)
+
+![Dashboard](http://i.imgur.com/mO6Fss.png)
 
 ##Buy Me A Cup of Coffee##
 
