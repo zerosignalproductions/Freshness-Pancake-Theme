@@ -14,7 +14,7 @@ Download the zip file and simply unzip into your **third_party** directory.
 [![Reports](http://i.imgur.com/PXKrJs.png)](http://i.imgur.com/PXKrJ.png)
 [![Estimates](http://i.imgur.com/cM2ZCs.png)](http://i.imgur.com/cM2ZC.png)
 [![Settings](http://i.imgur.com/mV3ams.png)](http://i.imgur.com/mV3am.png)
-[![Login](http://i.imgur.com/XoTSXs.png)](http://i.imgur.com/XoTSX.png)
+[![Login](http://i.imgur.com/iilRGs.png)](http://i.imgur.com/XoTSX.png)
 
 ##Buy Me A Cup of Coffee##
 
