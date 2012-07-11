@@ -1,0 +1,29 @@
+body{width:expression(document.documentElement.clientWidth < 1002 ? "1002px" : "auto");}
+.f-logo {
+	background:none;
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='assets/images/bg-f-logo.png', sizingmethod='crop');
+}
+.pagination .first {
+	background:none;
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='assets/images/btn-first.png', sizingmethod='crop');
+}
+.pagination .prev {
+	background:none;
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='assets/images/btn-prev.png', sizingmethod='crop');
+}
+.pagination .next {
+	background:none;
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='assets/images/btn-next.png', sizingmethod='crop');
+}
+.pagination .last {
+	background:none;
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='assets/images/btn-last.png', sizingmethod='crop');
+}
+.pagination li a:hover {
+	background:none;
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='assets/images/btn-pagination.png', sizingmethod='crop');
+}
+.pagination li strong {
+	background:none;
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src='assets/images/btn-pagination.png', sizingmethod='crop');
+}

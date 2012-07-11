@@ -1,0 +1,286 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* General Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, hr, button{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align: baseline;
+	background:none;
+}
+ol, ul {list-style:none;}
+h1, h2, h3, h4, h5, h6, li {line-height:100%;}
+blockquote, q {quotes:none;}
+table { border-spacing:0;}
+input, textarea, button {font-family:inherit; font-size:1em;}
+
+/*
+   login.css
+   pancake
+   
+   Created by Lee Tengum on 2011-01-04.
+   Copyright 2011 ThatLeeGuy (http://thatleeguy.com). All rights reserved.
+*/
+
+
+/* General Settings*/
+html{min-width:1002px; height:100%;}
+body{
+	color:#999;
+	min-width:1002px;
+	font:13px 'Open Sans', Helvetica, sans-serif;
+	
+	/* Some other nice ones that fit here too */
+	/* 
+	background:#464646;
+	background:;
+	background:;
+	*/
+	background:#F5F3F1;
+    background: #f5f3f1 url(../img/subtle_freckles.png) repeat top center;    
+	
+}
+a{
+	color:#000;
+	text-decoration:none;
+}
+a:hover{text-decoration:underline;}
+a:focus{outline:none;}
+input,textarea,select{
+	font:11px Arial, Helvetica, sans-serif;
+	vertical-align:middle;
+	padding:0;
+	margin:0;
+}
+form,fieldset{
+	margin:0;
+	padding:0;
+	border-style:none;
+}
+
+
+#wrapper {
+	width:410px;
+	margin:80px auto;
+	background:#fff;
+    -webkit-box-shadow: 0 5px #B9B9B9,0px 5px 6px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 5px #B9B9B9,0px 5px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px #B9B9B9,0px 5px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.header-area {
+    background: #1C99C7;
+    padding: 1em 1.5em;
+    border-radius: 3px 3px 0 0;
+    border-top: 5px solid #33B5E5;
+}
+
+#main {
+    background: #fff;
+    padding: 2em 2em 5px 2em;
+    border-radius: 0 0 3px 3px;
+}
+
+
+/* ==================================== */
+/* = Make everything look nice now :D = */
+/* ==================================== */
+
+.header-area .logo{
+	overflow:hidden;
+	font-size:26px;
+	line-height:28px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
+
+
+
+.header-area .logo a{
+	float:left;
+	color:#142c35;
+    padding: 10px 0;
+    color: #fff;
+}
+
+.header-box{
+	padding:0 50px 37px;
+	width:920px;
+}
+.header-box strong{
+	float:left;
+	color:#142c35;
+	line-height:18px;
+	padding-top:34px;
+}
+.header-box strong a{
+	float:left;
+	overflow:hidden;
+	color:#142c35;
+}
+.header-box strong a:hover{
+	text-decoration:none;
+	border-bottom:1px solid #142c35;
+}
+
+
+/* =============== */
+/* = Form fields = */
+/* =============== */
+#login-box {
+}
+
+.row label {
+	float:left;
+	color:#142c35;
+	line-height:18px;
+	width:115px;
+	padding:6px 0 2px;
+}
+
+.row {
+	width: 100%;
+	margin: 0 0 14px;
+}
+
+div.row+#forgot-password {
+    margin-bottom: 0;
+}
+
+.row label{margin-right:15px; text-align: right;}
+
+input.txt {
+    padding: 4px;
+    width: 185px;
+    font-size: 13px;
+    color: #555;
+    height: 30px;
+    background-color: white;
+    border: 1px solid #CCC;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+input.txt:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+input.small {
+	height: 12px;
+	font-size: 12px;
+}
+
+#forgot-password {
+    color: #1C99C7;
+    font-size: 11px;
+    top: 45px;
+    position: relative;
+    right: -28px;
+    display: block;
+    text-align: right;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+}
+
+/* =========== */
+/* = buttons = */
+/* =========== */
+.yellow-btn{
+    font-size: 14px;
+    background: #FF4179;
+    float: left;
+    font-weight: 600;
+    color: white !important;
+    line-height: 22px;
+    height: 30px;
+    padding: 5px 14px;
+    text-shadow: 1px 1px 1px #A6274C;
+    -webkit-box-shadow: 0 5px #A6274C,0px 5px 6px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 5px #a6274c,0px 5px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 5px #A6274C,0px 5px 6px rgba(0, 0, 0, 0.3);
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+.yellow-btn:hover {text-decoration:none;}
+.yellow-btn span {
+
+}
+
+/* ========================== */
+/* = Errors & Notifications = */
+/* ========================== */
+
+.notification {
+    padding: 1em 1.5em;
+
+}
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+
+.error {
+	color:#990000;
+}
+
+.success {
+	border:1px ;
+}
+
+.notification p:last-child {
+    margin-bottom: 0;
+}
+
+h2 {
+	font-size: 22px;
+	margin: 15px 0 10px 0;
+}
+p {
+	font-size: 16px;
+	margin-bottom:1em;
+}
+
+input.hidden-submit { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+#login-box .yellow-btn {
+    float: right;
+    margin-right: 42px;
+    margin-top: -58px;
+    width: 135px;
+    text-align: center;    
+}
+
+.img-logo img { height: auto !important;}

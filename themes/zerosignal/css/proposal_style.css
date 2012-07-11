@@ -1,0 +1,427 @@
+/*
+   proposal_style.css
+   Pancake Proposal Template
+
+	This template was design to be easily modifiable and simple to build new Pancake Payment Proposal templates from.
+
+   Copyright 2011 Pancake Payments (http://pancakeapp.com). All rights reserved.
+   
+*/
+
+.proposal .sidebar .img-logo {margin-bottom: 2em;width: 220px; text-align:center;}
+
+
+html, body {
+	margin:0;padding:0;
+	padding:0;
+	margin:0;
+	font-size:14px;
+	font-family:helvetica;
+	color:#4a4a4a;
+}
+
+.proposal.not-pdf {background: #F2F2F2;}
+
+.proposal.not-pdf #wrapper {
+	margin:auto 0;
+	padding: 0 0 0 320px;
+	max-width:1200px;
+}
+
+
+.proposal div.page {
+	border: 1px solid #ccc;
+	background-color: white;
+	margin-bottom: 50px;
+	margin-right:10px;
+	padding: 2em;
+}
+.proposal h2 {
+	margin-top: 0;
+}
+
+.proposal.admin .editable {cursor: pointer;}
+
+.proposal .editable {
+	position: relative;
+}
+.proposal textarea {
+	cursor: auto;
+	background: none;
+	outline: 2px dashed #ccc;
+	height: 1.2em;
+	width: 100%;
+	background: transparent;
+	color: inherit !important;
+	border: 0;
+	font-size: inherit;
+	font-weight: inherit;
+	font-family: inherit;
+	margin: 0;
+	padding: 0;
+}
+.proposal .cover-page {
+	border:1px solid #666;
+	color: #666;
+	text-align:center;
+	padding: 50px;
+	margin-bottom: 50px;
+	min-height:400px;
+	background: #fff bottom right no-repeat;
+
+}
+
+
+.proposal .cover-page h2, .proposal .cover-page p {
+	color: #666 !important;
+	font-family: 'Muli', helvetica;
+}
+
+.proposal .sidebar span.pageCount {
+	color:#ccc;
+}
+.proposal .title {
+	display:block;
+	margin:0 auto;
+	text-align:center;
+}
+.proposal .sidebar > ul {
+	padding-left: 2em;
+}
+.proposal .sidebar:before, .proposal .sidebar:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: -16px;
+	display: block;
+	background: white;
+	height: 16px;
+	width: 16px;
+}
+.proposal .sidebar:before {
+	background: #142C35;
+}
+.proposal .sidebar:after {
+	border-top-right-radius: 8px;
+}
+.proposal .sidebar {
+	position: fixed;
+	width:240px;
+	top: 55px;
+	left: 0;
+	height:100%;
+	background: #f2f2f2 url('../img/proposal_logo.png') 20px 20px no-repeat;
+	padding: 0px 25px 25px;
+	color: #555;
+	text-shadow:0 2px #fff;
+	border-bottom-left-radius: 4px;
+}
+.proposal .sidebar span {
+	text-shadow:none;
+}
+.proposal .sidebar h2 {
+	color: #666;
+	text-shadow:0 2px #fff;
+}
+.proposal .sidebar a.close {
+	float: right;
+	padding: 0;
+	background: transparent;
+}
+.proposal.not-pdf div.page, .proposal.not-pdf .cover-page {
+	-webkit-box-shadow: 0px 0px 10px #999;
+	-moz-box-shadow:  0px 0px 10px #999;
+	box-shadow:  0px 0px 10px #999;
+}
+.proposal #wrapper .section {
+	margin-bottom: 40px;
+}
+.proposal.not-pdf #wrapper {
+	margin-top: 105px;
+	margin-bottom: 50px;
+}
+.proposal.admin .sidebar li {
+	cursor: move;
+}
+.proposal .samplePage, .proposal .sampleSection {
+	display: none;
+}
+.proposal .sidebar select {
+	margin-bottom: 2em;
+}
+.proposal #clientInfo span {
+	float: none;
+}
+.proposal .clientId, .proposal .sidebar .clientEdit, .proposalId {
+	display: none;
+}
+.proposal .saveProposal {
+	min-width: 100px;
+	text-align: center;
+}
+.proposal .sidebar ul {
+	padding: 0;
+	list-style: none;
+}
+.proposal .sidebar li {
+	min-height: 20px;
+}
+.proposal .sidebar > ul > li > ul {
+	min-height: 37px;
+}
+.proposal .sidebar > ul > li > ul > li > ul {
+	border: 5px solid black;
+	min-height: 37px;
+}
+.proposal .sidebar > ul > li > ul > .empty {
+	height: 37px;
+	background:#C8EBFE;
+	border:1px dashed #ccc;
+}
+.proposal .sidebar > ul > li > ul > li > ul > .empty {
+	height: 37px;
+	background: #007BCF;
+}
+.proposal .sidebar ul ul li {
+	
+	margin-bottom:3px;
+	
+}
+.proposal .sidebar ul ul li > span {
+	padding: 10px;
+	margin: 0;
+	display: block;
+	background:#E3A05C!important;
+	color:#fff;
+	border-radius: 8px;
+}
+
+#facebox .section-contents, .proposal .sidebar .section > ul, .proposal.not-admin .savePremadeSection, .proposal.not-admin .addEstimate, .proposal.pdf .savePremadeSection {
+	display:none;
+}
+
+.proposal .addSection, .proposal .addPage, .proposal .sidebar a, .proposal .savePremadeSection, .proposal .addEstimate, .proposal .pickEstimate, .proposal .createEstimate, .proposal .addPremadeSection {
+/*	background: #007BCF;
+	color: white;
+	display: inline-block;
+	padding: 10px;
+	border-radius: 8px;
+	text-decoration: none; */
+	display: inline-block;
+}
+
+.proposal .estimate-link-container {margin-top:17px;width:360px;}
+.proposal.not-pdf .sectionContainer .section {position:relative;}
+
+.proposal .savePremadeSection {
+	position:absolute;
+	top:0;right:0;
+	z-index: 2;
+	opacity:0;
+	
+	-webkit-transition: opacity 0.4s linear;
+	-moz-transition: opacity 0.4s linear;
+	-o-transition: opacity 0.4s linear;
+	transition: opacity 0.4s linear;
+}
+
+.proposal .section:hover .savePremadeSection {
+	opacity:1;
+}
+
+.proposal.not-admin #wrapper .section:last-child {
+	margin-bottom: 0;
+}
+.proposal .sidebar .page > ul {
+	margin: 1em 0;
+	display: block;
+}
+.proposal .siteAddress {
+	width: 225px;
+}
+.proposal.pdf .sidebar, .proposal.pdf .addSection, .proposal.pdf .addPage, .proposal.not-admin .addSection, .proposal.not-admin .addPage, .proposal .editing-container, .proposal.not-admin .empty-stuffs, .proposal.pdf .addPremadeSection, .proposal.not-admin .addPremadeSection, .proposal.not-admin .savePremadeSection, .proposal.pdf .addEstimate {
+	display: none;
+}
+.proposal.pdf #clientInfo {
+	display: block;
+}
+.proposal.pdf .cover-page, .proposal.pdf .page {
+	height: 1022px;
+	border: 0;
+	page-break-after: always;
+	margin: 0;
+}
+.proposal.pdf .page:last-child {
+	page-break-after: avoid;
+}
+.proposal .empty-stuffs {
+	color: #ccc;
+}
+.proposal.pdf .empty-stuffs {
+	display: none;
+}
+.proposal .editing {
+	cursor: auto;
+/*	background: #142C35;*/
+	position: absolute;
+	font-size: 14px;
+	height: 20px;
+	top: -40px;
+	right: 0;
+	padding: 10px;
+}
+.proposal .editing a {
+	font-family:"Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;
+	font-size:11px;
+	text-decoration:none;
+	color:#ccc;
+	height:20px;
+	text-indent:-9999px!important;
+	padding:5px 10px 5px 20px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+  	-moz-box-shadow: 0px 0px 4px #CCCCCC;
+  	-webkit-box-shadow: 0px 0px 4px #CCCCCC;
+  	box-shadow: 0px 0px 4px #CCCCCC;
+	
+}
+
+.proposal .editing a.confirm {
+	border:1px solid #4eba29;
+	color:#4eba29;
+	background:#f2f2f2 url('../img/ui_icons/accepted_16.png') 2px 3px no-repeat;
+
+}
+
+.proposal .editing a.cancel {
+	border:1px solid #FF534F;
+	color:#FF534F;
+	background:#f2f2f2 url('../img/ui_icons/cancel_16.png') 2px 3px no-repeat;
+}
+
+
+.proposal .section .section-title, .premade-title {
+	color: #666 !important;
+	font-family: 'Muli', helvetica;
+	margin:0 0 0 0;
+}
+
+.proposal .section .section-subtitle, .premade-subtitle {
+	color: #999 !important;
+	margin:0 0 20px 0;
+}
+
+.proposal.not-admin .sidebar .section {
+	cursor:pointer;
+}
+
+
+/* =========================== */
+/* = Proposal Estimate Table = */
+/* =========================== */
+
+table#estimate_table {
+	margin:0 0 30px 0;
+	width:695px;
+	font-size:12px;
+	line-height:14px;
+}
+
+.pdf_mode table#estimate_table {
+	width:600px!important;
+	
+}
+
+table#estimate_table thead {
+	/* background:#f2f2f2; Known bug in DOMPDF, add when its fixed or whatever */
+	height:35px;
+	color:#333;
+
+}
+
+table#estimate_table thead th.column_1, table#estimate_table tbody td.column_1 {
+	padding:0 0 0 10px;
+}
+
+table#estimate_table thead th {
+	border-bottom: 1px solid #9fbbd0;
+	color: #005ea6;
+}
+
+table#estimate_table th,
+table#estimate_table td {
+	padding:10px;
+}
+
+table#estimate_table td {
+	padding:10px;
+}
+#content tbody tr.alt td {
+	background-color: #f3f6f9;
+}
+
+#content tr td.column_1 {
+	width:307px;
+	font-size:12px;
+}
+
+td.column_2, td.column_3{
+	width:50px;
+	text-indent:10px;
+}
+
+td.column_4 {
+	width:50px;
+	text-indent:0px;
+	text-align: center;
+}
+
+table#estimate_table tfoot tr:first-child td {
+	border-top: 1px solid #9fbbd0;
+}
+
+#content .invoice-description {
+	vertical-align: top;
+	font-size: 14px;
+}
+
+
+
+
+.estimate-select-description {color: #aaa !important; font-size: 14px; line-height: 1.4em;}
+
+/* =================================================== */
+/* = Override some default Pancake theme styles here = */
+/* =================================================== */
+
+
+#buttonBar {
+	background:#f2f2f2!important;
+}
+
+
+
+p {
+	margin:0 0 10px 0;
+	line-height:18px;
+}
+
+#facebox .popup {margin-bottom: 50px;}
+#facebox .popup .content {padding:20px;}
+.csstransitions #facebox iframe {-webkit-transition: height 0.2s ease-in;-moz-transition: height 0.2s ease-in;-o-transition:height 0.2s ease-in;}
+
+#premade-sections {width: 800px;border-collapse: collapse;}
+.premade-actions {width: 200px;}
+.premade-contents {color: #999 !important; }
+.premadeSection td {vertical-align:top;}
+.premade-title {margin-top:20px;}
+.premade-actions a {text-decoration:none;display:block;background: #E3A05C;color:white;margin-bottom:2px;padding: 8px;border-radius:4px;}
+#premade-sections tr:not(:last-child) td {border-bottom: 2px solid #ddd;}
+#premade-sections td {padding: 20px;}
+
+.proposal.pdf .cover-page, .proposal.pdf .page {height: auto;}
+.proposal.pdf #estimate_table, .proposal.pdf #estimate_table td, .proposal.pdf #estimate_table th {width: auto;}
+.proposal.pdf #estimate_table .column_1, .proposal.pdf #estimate_table {width: 100%;}
+.proposal.pdf #estimate_table .column_2, .proposal.pdf #estimate_table .column_3, .proposal.pdf #estimate_table .column_4, .proposal.pdf #estimate_table .column_5 {white-space: nowrap;}

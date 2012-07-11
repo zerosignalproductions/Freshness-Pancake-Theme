@@ -1,0 +1,677 @@
+/*
+   style.css
+   Pancake Invoice Template
+
+	This template was design to be easily modifiable and simple to build new Pancake Payment Invoice templates from.
+
+   Created by Lee Tengum on 2010-04-04.
+   Copyright 2010 Pancake Payments (http://pancakeapp.com). All rights reserved.
+   
+*/
+
+
+body {
+	background: #fff;
+	padding:0;
+	margin:0;
+	font-size:14px;
+	font-family:helvetica;
+	color:#808080;
+}
+
+/* ============ */
+/* = Defaults = */
+/* ============ */
+.orangered, ul li a  {
+	color: #005ea6;
+}
+
+
+
+.red, h1 {
+	color:#005ea6;
+	font-weight:normal;
+}
+
+h4 {
+	margin:0 0 5px 0;
+}
+
+p {
+	margin:0 0 10px 0;
+	line-height:18px;
+}
+
+.tight p, .tight h2 {
+	margin:0;
+	padding:0;
+}
+
+/* ============= */
+/* = Structure = */
+/* ============= */
+
+#buttonBar {
+	height:50px;
+	width:100%;
+	display:block;
+	text-align:right;
+  	position:fixed;
+    z-index: 4;
+	top:0;
+	left:0;
+	background:#F3F6F9 url('../img/bg-btn-bar.gif') repeat-x;
+	color: #515151;
+	font-family: Arial;
+	font-size: 15px;
+	line-height: 21px;
+
+}
+
+#buttonHolders {
+	width:835px;
+	margin:0 auto;
+}
+
+
+
+
+#buttonBar a {
+	float:right;
+	margin:10px 0px 0 10px;
+	padding:5px 10px;
+	color:#555;
+	text-decoration:none;
+
+  background: #F3F6F9;
+  border: 1px solid #bbb;
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#F3F6F9));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #FFFFFF, #F3F6F9);
+  background-image: -moz-linear-gradient(top, #FFFFFF, #F3F6F9);
+  background-image: -ms-linear-gradient(top, #FFFFFF, #F3F6F9);
+  background-image: -o-linear-gradient(top, #FFFFFF, #F3F6F9);
+  background-image: linear-gradient(top, #FFFFFF, #F3F6F9); 
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 1px 1px #fff;
+  -moz-box-shadow: inset 0 0 1px 1px #fff;
+  -ms-box-shadow: inset 0 0 1px 1px #fff;
+  -o-box-shadow: inset 0 0 1px 1px #fff;
+  box-shadow: inset 0 0 1px 1px #fff;
+  color: #333;
+  font: bold 11px "helvetica neue", helvetica, arial, sans-serif;
+  line-height: 1;
+  padding: 8px 12px 9px;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+
+}
+#buttonBar a:hover {
+    background: #D54518;
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#EF4C1A), to(#D54518));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #EF4C1A, #D54518);
+  background-image: -moz-linear-gradient(top, #EF4C1A, #D54518);
+  background-image: -ms-linear-gradient(top, #EF4C1A, #D54518);
+  background-image: -o-linear-gradient(top, #EF4C1A, #D54518);
+  background-image: linear-gradient(top, #EF4C1A, #D54518);
+
+  -webkit-box-shadow: inset 0 0 1px 1px #fff;
+  -moz-box-shadow: inset 0 0 1px 1px #fff;
+  -ms-box-shadow: inset 0 0 1px 1px #fff;
+  -o-box-shadow: inset 0 0 1px 1px #fff;
+  box-shadow: inset 0 0 1px 1px #fff;
+    color: #fff;
+    cursor: pointer;
+	text-shadow:none;
+}
+.button:active {
+    background: #D54518;
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#EF4C1A), to(#D54518));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #EF4C1A, #D54518);
+  background-image: -moz-linear-gradient(top, #EF4C1A, #D54518);
+  background-image: -ms-linear-gradient(top, #EF4C1A, #D54518);
+  background-image: -o-linear-gradient(top, #EF4C1A, #D54518);
+  background-image: linear-gradient(top, #EF4C1A, #D54518);
+
+    -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -ms-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -o-box-shadow: inset 0 0 1px 1px #eaeaea;
+    box-shadow: inset 0 0 1px 1px #eaeaea;
+    color: #fff;
+    cursor: pointer;
+	text-shadow:none;
+}
+
+.invoice .paidon {
+	font-family: 'Copse', serif;
+	color:#333;
+	float:left;
+	margin-left:5px;
+	margin-top:16px;}
+
+
+/* ================== */
+/* = END BUTTON BAR = */
+/* ================== */
+
+/* ====================================================== */
+/* = Set Table dimensions here for regular and pdf mode = */
+/* ====================================================== */
+
+td#company-info-holder {
+	width:400px;
+	height:200px;
+}
+
+.pdf_mode td#company-info-holder {
+    width: 320px;
+}
+
+td#invoice-details-holder {
+	width:400px;
+	height:200px;
+}
+
+
+/* ======================== */
+/* = END Table dimensions = */
+/* ======================== */
+
+/* ====================== */
+/* = BEGIN INVOICE BODY = */
+/* ====================== */
+
+
+#wrapper {
+	width:800px;
+	margin:0 auto;
+	font-size:14px;
+	clear:both;
+	padding:60px 0px;
+}
+
+.pdf_mode #wrapper {
+	margin:0;
+	width:600px!important;
+	overflow:none;
+	padding:0;
+}
+
+
+/* Logo holder */
+.img-logo {
+	margin-bottom:10px;
+}
+
+
+
+
+
+
+#envelope {
+	float:left;
+	
+}
+
+/* Invoice details box */
+
+#details-wrap {
+	padding-right:10px;
+	border-right:1px solid #efefef;
+}
+
+#invoice-details-holder p {
+	font-family: 'Copse', serif;
+	color:#888;
+	font-weight:400;
+}
+
+#invoice-details-holder h2 {
+	font-family: 'Copse', serif;
+	color:#555555;
+	font-size:48px;
+	text-transform:uppercase;
+	font-weight:700;
+	margin:-10px 0;
+}
+
+
+/* Company Details Box */
+
+#mailto {
+	width:300px;
+	float:left;
+}
+
+#companyInfo {
+	width:290px;
+	padding:20px 0px 60px 0px;
+	text-align:right;
+	color:#555;
+	float:left;
+}
+
+#companyInfo h1 {
+	font-size:18px;
+	color:#142C35;
+}
+
+#clientInfo {
+	clear:both;
+}
+
+/* Client Details Box */
+
+
+
+#clientInfo {
+	padding:20px 0px 30px 0px;
+
+}
+
+table#billing-table {}
+
+#clientInfo h2 {
+	font-size:14px;
+	margin:0 0 5px 0;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight:700;
+	color:#555555;
+}
+
+table#billing-table h3 {
+	font-size:14px;
+	margin:0 0 5px 0;
+	font-family: 'Droid Sans', sans-serif;
+	color:#555555;
+}
+
+table#billing-table p {
+	font-family: 'Copse', serif;
+	color:#888;
+	line-height:18px;
+	font-size:12px;
+	margin:0;
+}
+
+
+p#work_desc {
+	margin:30px 0 0 0;
+	color:#939393;
+	font-size:14px;
+	text-indent:10px;
+}
+
+#clientInfo span {
+	float:right;
+	clear:right;
+	width:170px;
+	text-align:left;
+}
+
+
+
+
+
+
+
+/* ======================== */
+/* = Invoice Table & Rows = */
+/* ======================== */
+
+#content {
+	clear:both;
+}
+#content table {
+	margin:0 0 30px 0;
+	width:800px;
+	font-size:12px;
+	line-height:14px;
+}
+
+.pdf_mode #content table {
+	width:600px!important;
+	
+}
+
+#content table thead {
+	/* background:#f2f2f2; Known bug in DOMPDF, add when its fixed or whatever */
+	height:35px;
+	color:#333;
+
+}
+
+#content table thead th {
+	color: #d44518;
+	font-family: 'Droid Sans',sans-serif;
+	font-size:14px;
+}
+
+#content table th {padding:10px 0 10px 0;}
+#content table td {padding:10px;}
+#content .column_1, #content .column_2, #content .column_3, #content .column_4, #content .column_5 {padding: 10px 0 !important;}
+#content .total-heading, #content .total-values {padding: 10px !important;}
+
+/* Define column widths here for online viewing. PDF mode is defined below */
+#content tr td.column_1 {
+	width:450px;
+	font-size:12px;
+	text-indent:25px;
+	color:#000;
+/*	background: url('../img/bg-invoice-row-col1.gif') 10px 9px no-repeat; */
+}
+
+#content td.column_2 {
+	width:60px;
+	text-align:center;
+}
+
+#content td.column_3 {
+	width:100px;
+	text-align:center;
+}
+
+#content td.column_4 {
+	width:50px;
+	text-indent:0px;
+	text-align: center;
+}
+
+#content td.column_5 {
+	width:70px;
+	text-indent:0px;
+	text-align: center;
+	color:#000;
+}
+
+
+
+/* PDF mode to make sure the invoice stays narrow enough for PDF generation */
+.pdf_mode #content tr td.column_1 {
+	width:307px;
+	font-size:12px;
+	
+}
+
+.pdf_mode td.column_2, td.column_3{
+	width:50px;
+	text-indent:10px;
+}
+
+.pdf_mode td.column_4 {
+	width:50px;
+	text-indent:0px;
+	text-align: center;
+}
+/* END PDF mode */
+
+
+
+#content table tfoot  {
+	
+}
+
+#content .invoice-notes h3 {
+		font-size:14px;
+		margin:0 0 5px 0;
+		font-family: 'Droid Sans', sans-serif;
+		color:#555555;
+	}
+
+#content .invoice-notes p, .main-body-style p {
+	font-family: 'Copse', serif;
+	color:#888;
+	line-height:18px;
+	font-size:12px;
+	margin:0 0 10px 0;
+}
+
+.payment-plan, .files-holder p {
+	font-family: 'Copse', serif;
+	color:#888;
+	line-height:18px;
+	font-size:14px;
+	margin:0 0 8px 0;
+}
+
+#content table tfoot tr.Im-sorry-for-this {
+
+}
+
+#content table tfoot tr.Im-sorry-for-this td {
+	padding:0;
+	margin:0;
+}
+
+#content table tfoot tr.Im-sorry-for-this td div.really-I-am {
+	border-top:1px solid #E6E6E6;
+	height:1px;
+	margin:50px 0 5px;
+}
+
+
+#content table tr.invoice-desc-row {
+	height:28px;
+	background:#f3f6f9;
+
+}
+
+#content table tr.invoice-desc-row td {
+/*
+	border-color:#e6e6e6;
+	border-style: solid;
+	border-width: 1px 0px;
+	border-collapse:separate;
+	padding:1px 0;
+	margin:0;
+*/
+}
+
+#content table tr.border-top td, #content table tr.border-bottom td {
+	padding:0;
+	margin:0;
+}
+
+#content table tr.border-top td div{
+	border-bottom:1px solid #E6E6E6;
+	height:1px;
+	margin: 0 0 1px 0;
+	display:block;
+}
+#content table tr.border-bottom td div {
+	border-top:1px solid #E6E6E6;
+	height:1px;
+	margin: 1px 0 0 0;
+	display:block;
+}
+
+#content table tr.invoice-item-notes td {
+	font-family: 'Copse', serif;
+	color:#888;
+	line-height:160%;
+	font-size:12px;
+}
+
+#content tfoot td.total-heading {
+	font-family: 'Copse', serif;
+	color:#555;
+	text-align:right;
+}
+
+#content tfoot td.total-values {
+	font-family: 'Copse', serif;
+	color:#555;
+	text-align:right;
+	white-space: nowrap;
+}
+
+#content tfoot td.invoice-due-on {
+	color: #D34517;
+	text-align:right;
+}
+
+
+#content table tr.invoice-total {
+    background: rgb(211,69,23);
+}
+
+#content table {border-collapse: collapse;}
+
+#content table tr.invoice-total td {
+	color:#fff;
+/*	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc; */
+	font-size:14px;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+#content .invoice-description {
+	vertical-align: top;
+	font-size: 14px;
+}
+
+#content .amount, #content .dueon, #wrapper a {
+	color: #555;
+}
+#content .payment-plan a {color: #D34517;}
+ .orange {color: #D34517!important;}
+
+#content .file-to-download {background-repeat: no-repeat;padding-left: 24px;}
+#files {margin:20px 0 0 0}
+#files ul {margin:0;list-style:none;padding:5px 0;}
+#files li {display:inline;padding:6px 10px 6px 0px; font-size:10px}
+
+#content .payment-plan {
+	/*
+	border-top: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	*/
+}
+
+#content #payment-plan-header {
+	margin-top:30px;
+}
+
+#content .files-holder {
+	padding:10px 0 0 0;
+}
+#content .invoice-description h3 {
+	
+}
+
+#content .total-heading {
+	text-align:right;
+	width: 110px;
+}
+
+#content ul#taxes {
+	padding-left:0;
+	font-size: 12px;
+}
+#content ul#taxes li {
+	list-style:none;
+}
+#content ul#taxes .name {
+	font-weight: bold;
+}
+
+/* ================================ */
+/* = Generic styles and reusables = */
+/* ================================ */
+
+.main-header-style {
+	
+}
+
+h2.main-header-style {
+	font-size:14px;
+	margin:0 0 5px 0;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight:700;
+	color:#555555;
+}
+
+table#billing-table h3 {
+	font-size:14px;
+	margin:0 0 5px 0;
+	font-family: 'Droid Sans', sans-serif;
+	color:#555555;
+}
+
+table#billing-table p {
+	font-family: 'Copse', serif;
+	color:#888;
+	line-height:18px;
+	font-size:12px;
+	margin:0;
+}
+
+strong {
+	font-weight:bold;
+}
+
+
+
+.timesheet-table {width: 100%;border-spacing: 0;border-left: 1px solid #ccc; font-size:12px!important;}
+.timesheet-table th, .timesheet-table td {padding: 10px 6px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align:center;}
+.timesheet-table th {background: #f6f6f6; color: black; border-top: 1px solid #ccc;}
+
+.timesheet_user, .timesheet_date, th.timesheet_task {white-space:nowrap;}
+.timesheet_notes{ text-align:left!important;}
+
+.proposal div.page {border: 1px solid #ccc;margin-bottom:50px;padding: 2em;}
+.proposal h2 {margin-top:0;}
+
+.proposal .editable {cursor: pointer;position:relative;}
+.proposal textarea {cursor: auto;background:none;outline: 2px solid #142C35;height: 1.2em;width:100%; background: transparent; color: inherit !important;border:0;font-size:inherit;font-weight:inherit;font-family:inherit;margin:0;padding:0;}
+.proposal .cover-page {background: #005ea6; color: white;padding: 50px;margin-bottom:50px;}
+.proposal .cover-page h2, .proposal .cover-page p {color:white !important;}
+.proposal .title {width: 250px;}
+.proposal .sidebar > ul {padding-left:2em;}
+.proposal .sidebar:before, .proposal .sidebar:after {content: "";position:absolute; z-index:1; top:0;left:-16px; display:block; background:white; height: 16px; width: 16px;}
+.proposal .sidebar:before {background:#142C35;}
+.proposal .sidebar:after {border-top-right-radius:8px;}
+.proposal .sidebar {position:fixed; top:55px; right:0; background: #142C35; padding: 25px;color:white;border-bottom-left-radius:4px;}
+.proposal .sidebar h2 {color:white;}
+.proposal .sidebar a.close {float:right;padding:0;background:transparent;}
+.proposal #wrapper .section {margin-bottom: 40px;}
+.proposal.not-pdf #wrapper {margin-top: 105px;margin-bottom: 50px;}
+.proposal.admin .sidebar li {cursor: move;}
+.proposal .samplePage, .proposal .sampleSection {display:none;}
+.proposal .sidebar select {margin-bottom: 2em;}
+.proposal #clientInfo span {float:none;}
+.proposal .clientId, .proposal .sidebar .clientEdit, .proposalId {display:none;}
+.proposal .saveProposal {min-width: 100px;text-align:center;}
+.proposal .sidebar ul {padding: 0;list-style: none;}
+.proposal .sidebar li {min-height: 20px;}
+.proposal .sidebar > ul > li > ul {min-height: 37px;}
+.proposal .sidebar > ul > li > ul > li > ul {border: 5px solid black;min-height:37px;}
+.proposal .sidebar > ul > li > ul > .empty {height: 37px;background: red;}
+.proposal .sidebar > ul > li > ul > li > ul > .empty {height: 37px;background: #005ea6;}
+.proposal .sidebar ul ul li {border: 1px solid #ccc;}
+.proposal .sidebar ul ul li > span {background: black;padding:10px;margin:0;display:block;}
+.proposal .addSection, .proposal .addPage, .proposal .sidebar a {background: #005ea6; color: white; display: inline-block; padding: 10px;border-radius: 8px;text-decoration:none;}
+.proposal.not-admin #wrapper .section:last-child {margin-bottom:0;}
+.proposal .sidebar .page > ul {margin: 1em 0;display:block;}
+.proposal .siteAddress {width: 225px;}
+.proposal.pdf .sidebar, .proposal.pdf .addSection, .proposal.pdf .addPage, .proposal.not-admin .addSection, .proposal.not-admin .addPage, .proposal .editing-container {display:none;}
+.proposal.pdf #clientInfo {display:block;}
+.proposal.pdf .cover-page, .proposal.pdf .page {height: 1022px;border:0;page-break-after:always;margin:0;}
+.proposal.pdf .page:last-child {page-break-after: avoid;}
+.proposal .empty-stuffs {color:#ccc;}
+.proposal.pdf .empty-stuffs {display:none;}
+.proposal .editing {cursor: auto;background: #142C35;border-radius: 8px;border-bottom-left-radius:0;border-bottom-right-radius:0;position:absolute;font-size:14px;height:20px;top:-40px;right:0;color:#4A4A4A;padding:10px;}
+.proposal .editing a {text-decoration:none;color: white;}
+
+#envelope2 table {width: 100%;}

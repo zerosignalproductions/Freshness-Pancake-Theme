@@ -1,0 +1,11 @@
+.timesheet-table tr td {
+	-webkit-transition: background-color 0.2s ease-in;
+	-ms-transition: background-color 0.2s ease-in;
+	-o-transition: background-color 0.2s ease-in;
+	-moz-transition: background-color 0.2s ease-in;
+	transition: background-color 0.2s ease-in;
+}
+.timesheet-table tr:hover td {background:#f4f4f4;}
+.timesheet-table {width: 100%;border-spacing: 0;border-left: 1px solid #ccc;}
+.timesheet-table th, .timesheet-table td {padding: 10px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align:center;}
+.timesheet-table th {background: #f6f6f6; color: black; border-top: 1px solid #ccc;}
