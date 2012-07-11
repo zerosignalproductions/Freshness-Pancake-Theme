@@ -1541,8 +1541,17 @@ a.partial-payment-details span {width:112px;text-align:center;}
 #facebox .invoice-block {padding: 40px 40px 20px 40px;}
 
 
-.gateway-items .not-first {margin-left:160px;zoom:1;display:block;}
+.gateway-items .not-first {margin-left:158px;zoom:1;display:block;}
 .gateway-items .gateway:after, div.partial-payment-details div:after, .report-filters .row .date:after, .report-filters .row .client:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.gateway-items .gateway label {
+    width: auto;
+    float: none;
+    padding-top: 2px;
+    vertical-align: top;
+    padding-left: 4px;
+    display: inline-block;
+} 
+
 .simple-button.with-extras {margin: 5px;display:inline-block;}
 .not-a-task {text-align: center;}
 .task-expand {display:block; padding: 10px 0;}
@@ -1781,8 +1790,6 @@ table.records {width:100%;margin:10px;border: 1px solid #DDD;display:none;}
 table.records th, table.records td {text-align:center;padding: 4px;border: 1px solid #DDD;vertical-align: middle;}
 table.records th {font-size: 1.2em;padding-bottom:0.5em;}
 table.records tr:nth-child(even) {background: #eee;}
-
-.gateway label {width: 320px !important;}
 
 /* For modern browsers */
 .cf:before,
