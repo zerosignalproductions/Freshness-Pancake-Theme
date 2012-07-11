@@ -1,5 +1,9 @@
 <?php if ($message = $this->session->flashdata('success')): ?>
-	<div class="notification success fadeable"><?php echo $message; ?></div>
+    <?php if ($module == 'dashboard'): ?>
+        <div class="notification success fadeable"><?php echo $message; ?></div>
+    <?php else: ?>
+        <div class="notification success fadeable"><p><?php echo $message; ?></p></div>
+    <?php endif; ?>
 <?php endif; ?>
 <?php if (isset($messages['success'])): ?>
 	<div class="notification success fadeable"><p><?php echo $messages['success']; ?></p></div>

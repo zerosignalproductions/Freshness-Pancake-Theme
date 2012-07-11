@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -12,7 +12,6 @@
 	<?php echo asset::render('main-css'); ?>
 
 	<!--[if lt IE 7]><?php echo asset::css('lt7.css'); ?> <![endif]-->
-	<!--[if !IE 7]><style type="text/css">#wrapper {display:table;height:100%}</style><![endif]-->
 	<?php if (Settings::get('backend_css')): ?><style type="text/css"><?php echo Settings::get('backend_css'); ?></style><?php endif; ?>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
@@ -211,11 +210,14 @@
 				<strong class="f-logo"><a href="http://pancakeapp.com/">Pancake</a></strong>
 				<div class="holder">
 					<div class="row">
-						<strong><?php echo __('global:pancakeby7am', array(Settings::get('version')))?></strong>
+						<p><?php echo __('global:pancakeby7am', array(Settings::get('version')))?></p>
 					</div>
 					<div class="row">
-						<strong><?php echo __('global:allrelatedmediacopyright', array(COPYRIGHT_YEAR, '<a href="http://7am.ca/">7am</a>')); ?></strong>
+						<p><?php echo __('global:allrelatedmediacopyright', array(COPYRIGHT_YEAR, '<a href="http://7am.ca/">7am</a>')); ?></p>
 					</div>
+                    <div class="row">
+                        <p class="theme-copy">Freshness Theme by <strong><a href="http://zerosignalproductions.com" title="Zero Signal Productions">Zero Signal Productions</a></strong> &copy; 2012</p>
+                    </div>
 				</div>
 			</div><!-- /footer-cell end -->
 

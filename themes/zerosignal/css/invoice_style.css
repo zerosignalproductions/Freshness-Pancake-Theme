@@ -9,13 +9,14 @@
    
 */
 
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
 
 body {
 	background: #fff;
 	padding:0;
 	margin:0;
 	font-size:14px;
-	font-family:helvetica;
+	font-family: 'Open Sans', helvetica;
 	color:#808080;
 }
 
@@ -171,7 +172,6 @@ p {
 
 td#company-info-holder {
 	width:400px;
-	height:200px;
 }
 
 .pdf_mode td#company-info-holder {
@@ -180,7 +180,6 @@ td#company-info-holder {
 
 td#invoice-details-holder {
 	width:400px;
-	height:200px;
 }
 
 
@@ -220,8 +219,10 @@ td#invoice-details-holder {
 
 
 #envelope {
-	float:left;
-	
+}
+
+#envelope table {
+    width: 100%; 
 }
 
 /* Invoice details box */
@@ -285,7 +286,6 @@ table#billing-table {}
 #clientInfo h2 {
 	font-size:14px;
 	margin:0 0 5px 0;
-	font-family: 'Droid Sans', sans-serif;
 	font-weight:700;
 	color:#555555;
 }
@@ -293,12 +293,10 @@ table#billing-table {}
 table#billing-table h3 {
 	font-size:14px;
 	margin:0 0 5px 0;
-	font-family: 'Droid Sans', sans-serif;
 	color:#555555;
 }
 
 table#billing-table p {
-	font-family: 'Copse', serif;
 	color:#888;
 	line-height:18px;
 	font-size:12px;
@@ -354,7 +352,6 @@ p#work_desc {
 
 #content table thead th {
 	color: #d44518;
-	font-family: 'Droid Sans',sans-serif;
 	font-size:14px;
 }
 
@@ -430,7 +427,6 @@ p#work_desc {
 	}
 
 #content .invoice-notes p, .main-body-style p {
-	font-family: 'Copse', serif;
 	color:#888;
 	line-height:18px;
 	font-size:12px;
@@ -438,7 +434,6 @@ p#work_desc {
 }
 
 .payment-plan, .files-holder p {
-	font-family: 'Copse', serif;
 	color:#888;
 	line-height:18px;
 	font-size:14px;
@@ -497,20 +492,17 @@ p#work_desc {
 }
 
 #content table tr.invoice-item-notes td {
-	font-family: 'Copse', serif;
 	color:#888;
 	line-height:160%;
 	font-size:12px;
 }
 
 #content tfoot td.total-heading {
-	font-family: 'Copse', serif;
 	color:#555;
 	text-align:right;
 }
 
 #content tfoot td.total-values {
-	font-family: 'Copse', serif;
 	color:#555;
 	text-align:right;
 	white-space: nowrap;
@@ -533,7 +525,6 @@ p#work_desc {
 /*	border-top:1px solid #ccc;
 	border-bottom:1px solid #ccc; */
 	font-size:14px;
-	font-family: 'Droid Sans', sans-serif;
 }
 
 #content .invoice-description {
@@ -597,7 +588,6 @@ p#work_desc {
 h2.main-header-style {
 	font-size:14px;
 	margin:0 0 5px 0;
-	font-family: 'Droid Sans', sans-serif;
 	font-weight:700;
 	color:#555555;
 }
@@ -605,12 +595,10 @@ h2.main-header-style {
 table#billing-table h3 {
 	font-size:14px;
 	margin:0 0 5px 0;
-	font-family: 'Droid Sans', sans-serif;
 	color:#555555;
 }
 
 table#billing-table p {
-	font-family: 'Copse', serif;
 	color:#888;
 	line-height:18px;
 	font-size:12px;

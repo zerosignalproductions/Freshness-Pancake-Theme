@@ -187,7 +187,7 @@ $('.more-actions').live('mouseover', function() {
 });
 
 $('.more-actions').live('mouseout', function() {
-    $(this).find('ul').css('top', '37px');
+    $(this).find('ul').css('top', '28px');
     $(this).find('.gear').removeClass('top-menu');
 });
 

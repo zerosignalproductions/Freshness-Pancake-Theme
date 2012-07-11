@@ -44,6 +44,7 @@ body{
     background: #f5f3f1 url(../img/subtle_freckles.png) repeat top center;    
 	
 }
+p { font-size: 13px; line-height: 19px; }
 a{
 	color:#000;
 	text-decoration:none;
@@ -84,7 +85,7 @@ form,fieldset{
 
 #main {
     background: #fff;
-    padding: 2em 2em 5px 2em;
+    padding: 2em 2em 1px 2em;
     border-radius: 0 0 3px 3px;
 }
 
@@ -143,6 +144,7 @@ form,fieldset{
 	line-height:18px;
 	width:115px;
 	padding:6px 0 2px;
+    font-size: 13px;
 }
 
 .row {
@@ -190,7 +192,7 @@ input.small {
 	font-size: 12px;
 }
 
-#forgot-password {
+#forgot-password, #cancel {
     color: #1C99C7;
     font-size: 11px;
     top: 45px;
@@ -207,7 +209,6 @@ input.small {
 .yellow-btn{
     font-size: 14px;
     background: #FF4179;
-    float: left;
     font-weight: 600;
     color: white !important;
     line-height: 22px;
@@ -222,8 +223,25 @@ input.small {
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
+    -webkit-transition: .01s linear all, .2s ease-in-out background-color;
+    -moz-transition: .01s linear all, .2s ease-in-out background-color;
+    transition: .01s linear all, .2s ease-in-out background-color;    
 }
-.yellow-btn:hover {text-decoration:none;}
+.yellow-btn:hover {
+    background: #FF5C8C;
+    text-decoration:none;
+}
+
+.yellow-btn:active {
+    box-shadow: #A6274C 0 1px, 0px 1px 3px rgba(0,0,0,0.3);
+    -webkit-box-shadow: #A6274C 0 1px,0px 1px 3px rgba(0,0,0,0.3);
+    -moz-transform: translate(0,2px)!important;
+    -webkit-transform: translate(0,2px)!important;
+    -o-transform: translate(0,2px)!important;
+    -ms-transform: translate(0,2px)!important;
+    transform: translate(0,2px)!important;
+}
+
 .yellow-btn span {
 
 }
@@ -270,7 +288,6 @@ h2 {
 	margin: 15px 0 10px 0;
 }
 p {
-	font-size: 16px;
 	margin-bottom:1em;
 }
 
@@ -283,4 +300,37 @@ input.hidden-submit { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px;
     text-align: center;    
 }
 
+#forgot-password-form {
+    font-size: 12px;
+}
+
+#forgot-password-form .yellow-btn {
+    margin-top: 6px;
+    margin-right: 10px;
+    width: 175px;
+}
+
+#cancel {
+    font-size: 12px;
+    top: 16px;
+    right: -13px;
+}
+
+#cancel p{
+    margin: 0 !important;
+    padding: 0 !;
+}
+
 .img-logo img { height: auto !important;}
+
+.clearfix:before, .row:before,
+.clearfix:after, .row:after {
+    content:"";
+    display:table;
+}
+.clearfix:after, .row:after {
+    clear:both;
+}
+.clearfix , .row{
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}

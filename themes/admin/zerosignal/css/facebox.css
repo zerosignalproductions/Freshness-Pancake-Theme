@@ -21,7 +21,7 @@
 #facebox .content {
   display:table;
   width: 370px;
-  padding: 10px;
+  padding: 25px;
   background: #fff;
   -webkit-border-radius:4px;
   -moz-border-radius:4px;
@@ -33,6 +33,14 @@
 }
 #facebox .content > p:last-child{
   margin-bottom:0;
+}
+
+#facebox .row {
+    margin-bottom: 1.5em;
+}
+
+#facebox br {
+    display: block;
 }
 
 #facebox .close{
