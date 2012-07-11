@@ -321,6 +321,9 @@ form,fieldset{
     position: absolute;
     top: 10px;
     right: 0;
+    
+    /* hack until I can get a specific project page class */
+    max-width: 500px;
 }
 
 .yellow-btn{
@@ -1444,6 +1447,9 @@ p.details {
 	clear:both;
 	display:block;
 	margin:40px 0 0 35px;
+    
+    /* hack until I can get a specific project page class */
+    margin-top: 100px;
 }
 
 #ajax-container {
@@ -1566,7 +1572,7 @@ input.hidden-submit, .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1
     background: white;    
 }
 .url-to-send {display:inline-block; text-align: center;}
-.urlToSend .yellow-btn {position:absolute;top:-2px;margin-left:10px;}
+.urlToSend .yellow-btn {position:absolute;top:16px;margin-left:10px;}
 
 .report-overview .graph {height: 200px;width:182px;text-align:center;}
 .report-overview .graph.no-data {padding-top:80px;height:200px;font-size:1.5em;color:#ddd;}
