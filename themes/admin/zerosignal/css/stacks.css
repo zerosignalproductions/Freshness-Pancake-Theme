@@ -17,7 +17,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 ol, ul {list-style:none;}
 h1, h2, h3, h4, h5, h6, li {line-height:100%; font-weight: 600}
 blockquote, q {quotes:none;}
-table { border-spacing:0; border-collapse: collapse; }
+table { border-spacing:0;  }
 input, textarea, button {font-family:inherit; font-size:1em;}
 /* General Settings*/
 html{min-width:1002px; height:100%;}
@@ -287,6 +287,7 @@ form,fieldset{
 	font-size:20px;
 	line-height:22px;
 	padding:0 0 2px 34px;
+    max-width: 400px;
 }
 .module-title .ttl {
 	margin-left:0px!important;
@@ -296,14 +297,14 @@ form,fieldset{
 	color:#142c35;
 	font-size:16px;
 	line-height:22px;
-	padding:2px 0 2px 40px;
+	padding:2px 0;
 }
 .ttl-narrow{
 	float:left;
 	color:#142c35;
 	font-size:16px;
 	line-height:22px;
-	padding:2px 0 2px 30px;
+	padding:2px 0;
 }
 .promo-block .top .ttl1{background:url(../img/icon01.png) no-repeat;}
 
@@ -323,7 +324,7 @@ form,fieldset{
     right: 0;
     
     /* hack until I can get a specific project page class */
-    max-width: 500px;
+    max-width: 525px;
 }
 
 .yellow-btn{
@@ -507,13 +508,14 @@ form,fieldset{
 /* Tables                            */
 /*************************************/
 
-.table-area{
-	margin:0 0 38px;
+#main > .table-area {
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.table-area.thirty-days {
-    width: 920px;
-    margin: 0 auto;
+.table-area{
+	margin:0 0 38px;
 }
 
 .table-area .head-box{
@@ -1452,7 +1454,7 @@ p.details {
     margin-top: 100px;
 }
 
-#ajax-container {
+#ajax-container, #ajax_container {
     clear: both;
 }
 
@@ -1612,6 +1614,18 @@ input.hidden-submit, .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1
 .thirty-days span:last-child {margin-bottom:0;} 
 .thirty-days td.cell1, .thirty-days td.cell3, .thirty-days td.cell5, .pc-table td.cell5 {padding: 10px 15px;}
 
+th.cell5:last-child {
+    width: 160px;
+}
+
+td.cell5 {
+    
+}
+
+td.cell5.actions {
+    width: 160px;
+}
+
 td.actions {
 	white-space: nowrap;
     max-width: 108px;
@@ -1680,16 +1694,19 @@ background-image: -moz-linear-gradient(
 border-radius: 4px;
 }
 
-.timer .timer-button {cursor:pointer;position:relative;border: 1px solid darkgreen;padding:4px 8px;margin-left:14px;
-width: 35px;
-text-align:center;
-display:inline-block;
--webkit-border-radius: 4px;
--moz-border-radius: 4px;
-border-radius: 4px;
-
-color:white;
-text-shadow: 0px -1px 0px black;
+.timer .timer-button {
+    cursor:pointer;
+    position:relative;
+    border: 1px solid darkgreen;
+    padding:4px 8px;
+    width: 47px;
+    text-align:center;
+    display:inline-block;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color:white;
+    text-shadow: 0px -1px 0px black;
 }
 
 #send_x_days_before {margin-right: 1em;width: 50px;}
@@ -1775,7 +1792,7 @@ text-shadow: 0px -1px 0px black;
 .more-actions {position:relative;float:left;}
 .more-actions ul a {padding: 16px !important; display: block;color: #666;margin:0 !important;}
 .more-actions ul a:hover {text-decoration:none; color:#000;}
-.more-actions .gear {position:absolute; padding: 0; border:1px solid transparent;border-bottom:0;width:30px;}
+.more-actions .gear { padding: 0; border:1px solid transparent;border-bottom:0;width:30px;}
 .more-actions:hover .gear {background:white;border: 1px solid #dedede;border-bottom:0;}
 .more-actions .gear.top-menu {border-bottom: 1px solid #dedede !important;}
 
@@ -1893,7 +1910,7 @@ table.records tr:nth-child(even) {background: #eee;}
 }
 .pc-table tr:hover td {background:#f4f4f4;}
 #invoice-items tr:hover td {background:white;}
-.timer-td {width: 122px;text-align:center;}
+.timer-td {width: 135px;text-align:center;}
 .actions-td {min-width: 200px;}
 .centered-th {padding: 0 10px !important; text-align: center !important;}
 #settings-form #general .txt {width:280px;}
