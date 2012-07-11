@@ -9,7 +9,7 @@ Download the zip file and simply unzip into your **third_party** directory.
 
 ## Screenshots ##
 
-[![Dashboard](http://i.imgur.com/mO6Fss.png)](http://i.imgur.com/mO6Fs.png)
+![Dashboard](http://i.imgur.com/mO6Fs.png)
 [![Invoices](http://i.imgur.com/z7Kcks.png)](http://i.imgur.com/z7Kck.png)
 [![Reports](http://i.imgur.com/PXKrJs.png)](http://i.imgur.com/PXKrJ.png)
 [![Estimates](http://i.imgur.com/cM2ZCs.png)](http://i.imgur.com/cM2ZC.png)
