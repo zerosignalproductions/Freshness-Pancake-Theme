@@ -30,7 +30,7 @@ Pancake.Invoices = {
         }
         
         $(document).bind('reveal.facebox', function() { 
-            $('#facebox .not-uniform:not(.uniformized)').addClass('uniformized').uniform();
+            //$('#facebox .not-uniform:not(.uniformized)').addClass('uniformized').uniform();
                 
             $('#add_payment form').submit(function() {
                 $(document).trigger('close.facebox');
@@ -121,7 +121,7 @@ function process_import_table() {
 
 function add_hours() {
     var el = $('.invoice-block #add_hours_container').clone();
-    el.find('select').removeClass('not-uniform');
+    //el.find('select').removeClass('not-uniform');
     el.find('[name=add_hours_date]').addClass('datePicker');
     jQuery.facebox(el);
     return false;
@@ -215,7 +215,7 @@ $('.import-field select').live('change', function() {
 		    matched.each(function() {
 			$(this).removeClass('matched-'+field).data('matched', '');
 			$(this).find('select').val('select').change();
-			$.uniform.update('.import-field select');
+			//$.uniform.update('.import-field select');
 		    });
 		}
     }
@@ -310,7 +310,7 @@ $('a.partial-payment-details').live('click', function() {
 	invoice_unique_id = $(this).data('invoice-unique-id');
     }
     $(document).bind('reveal.facebox', function() { 
-	$('#facebox .not-uniform:not(.uniformized)').addClass('uniformized').uniform();
+	//$('#facebox .not-uniform:not(.uniformized)').addClass('uniformized').uniform();
                 
 	$('#partial-payment-details form').submit(function() {
 	    $(document).trigger('close.facebox');
@@ -463,7 +463,7 @@ $(function(){
 	    });
 	}
 
-	$.uniform && $("select.tax_id").uniform();
+	//$.uniform && $("select.tax_id").uniform();
 
 	setTimeout(function() {$('.fadeable').css('overflow', 'hidden').slideUp(1000);}, 5000);
 
