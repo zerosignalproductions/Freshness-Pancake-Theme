@@ -15,6 +15,7 @@
 	<?php if (Settings::get('backend_css')): ?><style type="text/css"><?php echo Settings::get('backend_css'); ?></style><?php endif; ?>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    
 	<script>
 	    window.jQuery || document.write('<script src="<?php echo asset::get_src('jquery.js', 'js');?>">\x3C/script>');
 	    refreshTrackedHoursUrl = '<?php echo site_url('ajax/refresh_tracked_hours/');?>';
@@ -30,7 +31,7 @@
 	    lang_markaspaid     = '<?php echo __('partial:markaspaid'); ?>';
 	    submit_import_url = '<?php echo site_url('admin/settings/submit_import/')?>';
 	    lang_loading_please_wait = '<?php echo addslashes(__('update:loadingpleasewait'));?>';
-            submit_hours_url = '<?php echo site_url('admin/projects/times/add_hours')?>';
+        submit_hours_url = '<?php echo site_url('admin/projects/times/add_hours')?>';
 	</script>
 	<?php asset::js('main.js', array(), 'main-js'); ?>
 	<?php asset::js('jquery-ui-1.8.15.custom.min.js', array(), 'main-js'); ?>
@@ -40,6 +41,7 @@
 	<?php echo asset::render('main-js'); ?>
 </head>
     <body class="<?php echo (isset($iframe)) ? ($iframe ? 'iframe' : '') : '';?>">
+    
 <div id="wrapper">
 			<div id="header">
                 <div class="container">
@@ -194,15 +196,10 @@
                         <?php echo $template['body']; ?>
                     </div><!-- end .content-container -->
                 <?php endif; ?>
-
-				
-                    
-                
 			</div><!-- /main end -->
 
 </div><!-- /wrapper end -->
 <div id="footer">
-
 			<div class="footer-cell container">
 				<strong class="f-logo"><a href="http://pancakeapp.com/">Pancake</a></strong>
 				<div class="holder">
@@ -224,5 +221,7 @@
     <?php echo file_get_contents(FCPATH.'DEMO');?>
 <?php endif;?>
 <!-- <?php echo isset($GLOBALS['HTTP_REQUESTS']) ? $GLOBALS['HTTP_REQUESTS'] : 0;?> HTTP REQUESTS -->
+
+
 </body>
 </html>

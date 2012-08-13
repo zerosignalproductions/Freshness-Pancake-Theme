@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .clearfix:after{clear:both;content:' ';display:block;font-size:0;height:0;line-height:0;visibility:hidden;width:0}* html .clearfix,:first-child+html .clearfix{zoom:1}
@@ -78,6 +78,7 @@ form,fieldset{
 	float:right;
 	overflow:hidden;
     border-radius: 0 0 5px 5px;
+    background: rgba(0, 0, 0, .15);
 }
 .user-nav li{
 	float:left;
@@ -86,7 +87,7 @@ form,fieldset{
 	font-size:11px;
 	font-weight: 500;
     margin: 8px 0;
-    border-left: 1px solid #45B2CE;
+    border-left: 1px solid rgba(255, 255, 255, .4)
 }
 
 .user-nav li:first-child {
@@ -118,6 +119,10 @@ form,fieldset{
 }
 .header-area .logo a:hover{
 	text-decoration:none;
+}
+
+.header-area .img-logo {
+    line-height: 0;
 }
 
 .header-area .img-logo img {
@@ -164,6 +169,9 @@ form,fieldset{
 #nav li{
     float:left; position: relative; z-index: 20;
     border-bottom: 3px solid transparent;
+    -webkit-transition: .2s ease-in-out border-color;
+    -moz-transition: .2s ease-in-out border-color;
+    transition: .2s ease-in-out border-color;
 }
 #nav a{
 	float:left;
@@ -281,7 +289,7 @@ form,fieldset{
     display: none;    
 }
 
-.ttl{
+.ttl, .ttl-narrow{
 	float:left;
 	color:#142c35;
 	font-size:20px;
@@ -299,13 +307,11 @@ form,fieldset{
 	line-height:22px;
 	padding:2px 0;
 }
-.ttl-narrow{
-	float:left;
-	color:#142c35;
-	font-size:16px;
-	line-height:22px;
-	padding:2px 0;
+
+.ttl-narrow {
+    padding-left: 4px;
 }
+
 .promo-block .top .ttl1{background:url(../img/icon01.png) no-repeat;}
 
 .btns-list{
@@ -320,7 +326,7 @@ form,fieldset{
 
 .invoice-block > .btns-list {
     position: absolute;
-    top: 10px;
+    top: 16px;
     right: 0;
     
     /* hack until I can get a specific project page class */
@@ -529,6 +535,7 @@ form,fieldset{
 	color:#b3b3b3;
 	font-size:18px;
 	line-height:20px;
+    font-weight: 600;
 }
 table.pc-table {
 	width:100%;
@@ -547,15 +554,40 @@ table.pc-table th {
 	font-size:14px;
 	line-height:16px;
 	text-align:left;
-	padding-left:15px;
-	padding-right:15px;
+	padding: 4px 15px;
 	font-weight: 600;
 	color: #fff;
     background: #1C99C7;
 }
 
 #invoice-items th {
-	padding-right:0;
+	
+}
+
+#invoice-items th:nth-child(1),
+#invoice-items td:nth-child(1){
+    width:180px !important;
+}
+
+#invoice-items th:nth-child(2),
+#invoice-items td:nth-child(2){
+    width:95px !important;
+}
+
+#invoice-items th:nth-child(3),
+#invoice-items td:nth-child(3){
+    width:90px !important;
+}
+
+#invoice-items th:nth-child(4),
+#invoice-items td:nth-child(4){
+    width:160px !important;
+    text-align: left;
+}
+
+#invoice-items th:nth-child(6),
+#invoice-items td:nth-child(6){
+    padding-right: 10px !important;
 }
 
 table.pc-table tr td,
@@ -572,11 +604,9 @@ table tr td:first-child, table tr th:first-child { border-left: none; }
 table tr td:last-child, table tr th:last-child { border-right: none; }
 table tr:first-child th { border-top: none; }
 
-
-
 table.pc-table tr:last-child td,
 table.pc-table tr:last-child td {
-	border-bottom: 1px solid #dedede;
+	/*border-bottom: 1px solid #dedede;*/
 }
 
 table.pc-table tr:first-child th:first-child {
@@ -634,7 +664,12 @@ table.pc-table .project-holder li img{vertical-align:top;}
 
 table.pc-table td.task-name {width:200px}
 
-table.pc-table td.notes_row {background:url(../img/icon-new-line.png) 40px 10px no-repeat!important; padding-left:80px}
+table.pc-table td.notes_row {
+    background-image:url(../img/icon-new-line.png);
+    background-position: 40px 10px;
+    background-repeat: no-repeat;
+    padding-left:80px
+}
 
 /*************************************/
 /* End Tables                        */
@@ -646,11 +681,21 @@ table.pc-table td.notes_row {background:url(../img/icon-new-line.png) 40px 10px 
 /*************************************/
 
 .milestone-icon {
-	border: 1px solid #ccc;
-	height: 10px;
-	width: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+	height: 13px;
+	width: 13px;
 	float:left;
-	margin: 1px 5px 1px 0;
+	margin: 3px 4px 0 0;
+}
+
+.head-box .milestone-icon {
+    margin: 7px 2px 0 3px !important;
+}
+
+.milestone-icon+.ttl-small {
+    margin-left: 7px !important;
 }
 
 /*************************************/
@@ -759,8 +804,12 @@ table.pc-table td.notes_row {background:url(../img/icon-new-line.png) 40px 10px 
 }
 .invoice-block .head-box{
 	float: left;
-	margin:0 0 27px;
+	margin:0 0 27px !important;
 	overflow:hidden;
+}
+
+.reusable-items-description {
+    clear: both;
 }
 
 .ttl3{background:url(../img/icon05.png) no-repeat;}
@@ -829,7 +878,7 @@ table.pc-table td.notes_row {background:url(../img/icon-new-line.png) 40px 10px 
 }
 
 .invoice-block .row label{
-    margin-right:8px;
+    margin-right:10px;
     width: 150px;
     padding-top: 6px;
 }
@@ -867,10 +916,9 @@ input.placeholder, textarea.placeholder {
 	font-color:#ccc;
 }
 
-
 .tax-dropdown select {
-	padding: 5px 0;
 	margin: 0;
+    width: 130px;
 }
 .tax-dropdown div.selector,
 .tax-dropdown div.selector select {
@@ -881,7 +929,6 @@ input.placeholder, textarea.placeholder {
 	width: 100px;
 	margin: 0;
 }
-
 
 .invoice-block .sel-item {
     margin-right: 10px;
@@ -950,7 +997,6 @@ input.placeholder, textarea.placeholder {
 .submit-holder {
     zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
-
 
 .invoice-block .btns-holder .btns-list{
 	margin-top:0;
@@ -1069,30 +1115,6 @@ textarea {
 
 #form_container label { width: 10em !important; }
 
-/* Stick the footer to the bottom */
-
-#wrapper {min-height: 100%;
-height: auto !important;
-height: 100%;
-margin-bottom: -111px;
-}
-
-
-#footer {position: relative;
-	margin-top: -111px; /* negative value of footer height */
-	height: 111px;
-	clear:both;} 
-
-/*Opera Fix*/
-body:before {
-	content:"";
-	height:100%;
-	float:left;
-	width:0;
-	margin-top:-32767px;/
-}
-
-
 /* =================== */
 /* = Clients Section = */
 /* =================== */
@@ -1105,7 +1127,6 @@ h4.orangered {
 #clientDetails {
 	padding:0 80px;
 }
-
 
 #detailsHolder {
 	width:250px; 
@@ -1146,10 +1167,28 @@ h4.orangered {
 }
 
 /* ======================= */
-/* = END Clients section = */
+/* Footer
 /* ======================= */
 
+#wrapper {min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -111px;
+}
 
+#footer {position: relative;
+	margin-top: -111px; /* negative value of footer height */
+	height: 111px;
+	clear:both;} 
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
 
 #footer{
 	width:100%;
@@ -1225,11 +1264,6 @@ h4.orangered {
     
 }
 
-/* footer end */
-/* wrapper end */
-
-
-
 /* ==================================== */
 /* = General Errors and notifications = */
 /* ==================================== */
@@ -1265,11 +1299,19 @@ h4.orangered {
 .warning {
     color: #9F6000;
     background-color: #FEEFB3;
+}
+
+.warning p {
     background-image: url('../img/ui_icons/warning_48.png');
 }
+
 .error {
     color: #D8000C;
-    background-color: #FFBABA;
+    background-color: #F2DEDE;
+    border-color: #EED3D7;
+}
+
+.error p {
     background-image: url('../img/ui_icons/warning_48.png');
 }
 
@@ -1534,22 +1576,23 @@ div.partial-percentage select {width: 50px; margin-right: 12px;}
 input.partial-due_date {margin-right: 12px;}
 div.partial-labels, div.partial-inputs {float:left;width:742px;}
 div.partial-inputs {margin-left: 160px;margin-bottom:10px;}
-div.partial-inputs .partial-notes {width: 250px;}
+div.partial-inputs .partial-notes {width: 342px;}
 div.partial-labels .partial-is_paid {width:auto;}
-div.partial-labels .partial-amount {margin-left: 8px;width:115px;}
-div.partial-labels .partial-due_date {width: 105px;}
+div.partial-labels .partial-amount {width:110px;}
+div.partial-labels .partial-due_date {width: 102px;}
 div.partial-inputs .partial-due_date {width: 100px;}
 div.partial-labels .partial-notes {width:290px;}
-div.partial-addmore {margin-left: 155px;}
+div.partial-addmore {margin-left: 160px;}
 a.partial-payment-delete {margin-left:9px;font-size:1.75em;}
 a.partial-payment-details {margin-left:10px;margin-bottom:4px;}
 a.partial-payment-details span {width:112px;text-align:center;}
 #facebox .partial-payment-details {width: 490px;}
 #facebox input {width: 220px;}
 #facebox .invoice-block {padding: 40px 40px 20px 40px;}
+#description, #notes { width: 700px; }
 
 
-.gateway-items .not-first {margin-left:158px;zoom:1;display:block;}
+.gateway-items .not-first {margin-left:160px;zoom:1;display:block;}
 .gateway-items .gateway:after, div.partial-payment-details div:after, .report-filters .row .date:after, .report-filters .row .client:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
 .gateway-items .gateway label {
     width: auto;
@@ -1899,6 +1942,7 @@ table.records tr:nth-child(even) {background: #eee;}
 
 #branding .explanation, #importexport .explanation { margin-left:160px;color:#888;}
 #importexport .explanation {margin-left: 235px;}
+#invoice-items { width: 700px !important; }
 #invoice-items > tbody > tr > td {padding:0;border:0;}
 
 .pc-table tr td {
@@ -1917,9 +1961,6 @@ table.records tr:nth-child(even) {background: #eee;}
 #settings-form #general input[type=checkbox].txt {width:auto; margin-right: 8px;}
 
 .pci_warning {padding: 1em 0 1em 0;color: #999;}
-
-.reusable-items-description p {font-size: 16px;line-height: 1.4em;padding: 0 100px;}
-
 
 
 /* ======================================= */
@@ -2095,7 +2136,7 @@ color: #142C35;
 
 .amount_left {font-weight: 600;color:green;}
 .amount_left.remaining {font-weight: 600;color:red;}
-.payment-plan-amounts {float:left;margin-right: 20px;width: 440px;}
+.payment-plan-amounts {float:left;margin-right: 20px;width: 420px;}
 
 .invoice-block #add_hours_container {display:none;}
 #add_hours_container {width: 665px;}
@@ -2142,8 +2183,8 @@ color: #142C35;
 #nav-container { 
     position: relative;
     background: #3a3a3a;
-    border-top: 1px solid #111;
-    border-bottom: #111;
+    border-top: 1px solid #222;
+    border-bottom: #222;
 }
 
 #mailperson {

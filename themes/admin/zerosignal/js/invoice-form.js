@@ -152,7 +152,7 @@ $('#invoice-items .delete').live('click', function() {
 $(function(){
     fix_item_cost_width();
     if ($('.partial-payment-details').length == 0) {
-        $('div.partial-inputs .partial-notes').width(386);
+        $('div.partial-inputs .partial-notes').width(470);
     }
 	
     $('.partial-payment-delete:first').hide();
@@ -289,7 +289,7 @@ $(function(){
 				
                 $('textarea.item_description', description).val(ui.item.description);
 				
-                $.uniform.update('.tax_id');
+                //$.uniform.update('.tax_id');
                 updatePaymentPlanTotals();
             }
         });
@@ -311,7 +311,6 @@ $(function(){
 
     // Add a new row
     $('a#add-row').click(function(){
-
         // Remove if there are others to clone
         details = $('#invoice-items tbody tr.details:first');
         description = $('#invoice-items tbody tr.description:first');
@@ -339,7 +338,7 @@ $(function(){
 		
         $('#invoice-items > tbody > tr:last table').append(details);
         $('#invoice-items > tbody > tr:last table').append(description);
-        $.uniform.update('.tax_id');
+        
         updatePaymentPlanTotals();
         return false;
     });
