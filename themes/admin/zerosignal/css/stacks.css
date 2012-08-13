@@ -560,6 +560,11 @@ table.pc-table th {
     background: #1C99C7;
 }
 
+#invoice-items, #invoice-items table {
+    width: 700px;
+    table-layout: fixed;
+}
+
 #invoice-items th {
 	
 }
@@ -585,9 +590,16 @@ table.pc-table th {
     text-align: left;
 }
 
+#invoice-items th:nth-child(5),
+#invoice-items td:nth-child(5){
+    width:80px !important;
+    text-align: left;
+}
+
 #invoice-items th:nth-child(6),
 #invoice-items td:nth-child(6){
     padding-right: 10px !important;
+    width: 90px;
 }
 
 table.pc-table tr td,

@@ -10,10 +10,10 @@
 <body>
 <div id="wrapper">
 	<?php if (!isset($hide_header)) :?>
-	<div class="header-area">
-		<?php echo logo();?>
-	</div><!-- /header-area end -->
-	<?php echo $template['partials']['notifications']; ?>    
+        <div class="header-area">
+            <?php echo logo();?>
+        </div><!-- /header-area end -->
+        <?php echo $template['partials']['notifications']; ?>    
 	<?php endif;?>
 	<div id="main">
 		<?php echo $template['body']; ?>

@@ -1,12 +1,21 @@
-
-
+<?php $this->load->library('user_agent'); ?>
 <?php if ($message = $this->session->flashdata('success')): ?>
-
-    <?php $referrer = $_SERVER['HTTP_REFERER']; ?>
-    <?php $referrer = parse_url($referrer, PHP_URL_PATH); ?>
+    <?php
+        
+        if($this->agent->is_referral()) {
+            $referrer = $this->agent->referrer();
+            $referrer = parse_url($referrer, PHP_URL_PATH);
+            
+            if(strpos($referrer, "login") != FALSE) {
+                $referrer = "";
+            }
+        } else {
+            $referrer = "";
+        }
+    ?>
 
     <?php /* Check if we're coming from the login page, <p> tags are only added there for some reason */ ?>
-    <?php if (strpos($referrer, "login") != FALSE ): ?>
+    <?php if($referrer == ""): ?>
         <div class="notification success fadeable"><?php echo $message; ?></div>
     <?php else: ?>
         <div class="notification success fadeable"><p><?php echo $message; ?></p></div>
