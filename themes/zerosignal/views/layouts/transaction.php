@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -12,7 +11,10 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 
 <!-- CSS -->
+<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700,600italic' rel='stylesheet' type='text/css'>        
+
 <?php echo asset::css('request_style.css', array('media' => 'all')); ?>
+
 
 <?php if (Settings::get('frontend_css')): ?>
 	<style type="text/css"><?php echo Settings::get('frontend_css'); ?></style>

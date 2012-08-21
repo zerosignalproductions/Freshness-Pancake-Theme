@@ -1,9 +1,9 @@
 body {
-background:  #ececec;
-color: #515151;
-font-family: Arial;
-font-size: 15px;
-line-height: 21px;
+    background: #ececec url(../img/subtle_freckles.png);
+    color: #515151;
+	font-family: 'Source Sans Pro', 'source sans pro', 'Open Sans', 'Helvetica', helvetica;
+    font-size: 15px;
+    line-height: 21px;
 }
 
 #wrapper {
@@ -20,12 +20,15 @@ line-height: 21px;
 }
 
 #content {
-background: white;
-border-bottom-left-radius: 3px 3px;
-border-bottom-right-radius: 3px 3px;
-border-top-left-radius: 3px 3px;
-border-top-right-radius: 3px 3px;
-padding: 26px 35px;
+    background: white;
+    display: block;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: 0 5px #B9B9B9,0px 5px 6px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 5px #B9B9B9,0px 5px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px #B9B9B9,0px 5px 6px rgba(0, 0, 0, 0.3);
+    padding: 26px 35px;
 }
 
 
@@ -43,9 +46,11 @@ padding: 26px 35px;
 
 h1, h3, h4, a {
 	color:#D54518;
+    font-weight: 400;
 }
 
 h2 {
+    font-weight: 400;
 	color:#555;
 	padding:0;
 	margin:20px 0;

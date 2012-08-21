@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -25,7 +25,7 @@
     <div id="logo"></div>
 		<div id="headerInvoice"> 
 		</div>
-<?php echo $template['body']; ?>
+        <?php echo $template['body']; ?>
 		<div id="footer">
 		<?php if (is_admin()): ?>
 			<?php echo anchor('admin', __('global:backtoadmin')); ?>

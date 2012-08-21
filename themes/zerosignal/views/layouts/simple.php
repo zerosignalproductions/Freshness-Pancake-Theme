@@ -28,7 +28,7 @@
 
 		</div><!-- /headerInvoice -->
         
-<?php echo $template['body']; ?>
+            <?php echo $template['body']; ?>
 		
         <div id="footer">
 			<?php if (is_admin()): ?>
