@@ -13,58 +13,52 @@
 
         <!-- CSS -->
         <?php echo asset::css('invoice_style.css', array('media' => 'all'), NULL, $pdf_mode); ?>
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700,600italic' rel='stylesheet' type='text/css'>        
 	
-	<?php if (Settings::get('frontend_css')): ?>
-	<style type="text/css"><?php echo Settings::get('frontend_css'); ?></style>
-<?php endif; ?>
+        <?php if (Settings::get('frontend_css')): ?>
+        <style type="text/css"><?php echo Settings::get('frontend_css'); ?></style>
+        <?php endif; ?>
     </head>
 
     <body class="timesheet <?php echo is_admin() ? 'admin' : 'not-admin';?> <?php echo ($pdf_mode) ? 'pdf_mode' : '';?>">
         <?php if( ! $pdf_mode): ?>
-	<div id="buttonBar">
-
-		<div id="buttonHolders">
-		<?php if (logged_in()): ?>
-			<?php echo anchor('admin', 'Go to Admin &rarr;', 'class="button"'); ?>
-		<?php endif; ?>
-		<div id="pdf">
-			<a href="<?php echo $timesheet_url_pdf; ?>" title="Download PDF" id="download_pdf" class="button">Download PDF</a>
-		</div><!-- /pdf -->
-		</div><!-- /buttonHolders -->
-
-	</div><!-- /buttonBar -->
-<?php endif; ?>
+        <div class="buttonBar">
+            <div class="buttonHolders">
+                <div id="pdf">
+                    <a href="<?php echo $timesheet_url_pdf; ?>" title="Download PDF" id="download_pdf" class="button">Download PDF</a>
+                </div><!-- /pdf -->
+                <?php if (logged_in()): ?>
+                    <?php echo anchor('admin', 'Go to Admin &rarr;'); ?>
+                <?php endif; ?>
+                <span class="button-bar-text"><?php echo __('timesheet:for');?> <?php echo $client['company'];?></span>
+            </div><!-- /buttonHolders -->
+        </div><!-- /buttonBar -->
+        <?php endif; ?>
         <div id="wrapper">
-
+                    
             <div id="header">
-                
-                <div id="clientInfo">
-            <div id="envelope2">
-              <table cellspacing="5" cellpadding="5">
+                <div id="envelope">
+                    <h1><span>Timesheet</span></h1>
+                    
+                    <?php //load the Info Boxes ?>
+                    <?php include($this->template->get_theme_path().'views/info.php'); ?>
+              
+                </div><!-- #envelop -->
+            </div><!-- #header -->
+            
+            <table class="invoice-meta">
                 <tr>
-                  <td width="310px" style="vertical-align:top;"><h2><?php echo __('timesheet:for');?><br /><?php echo $client['company'];?></h2>
-                    <p><?php echo $client['company'];?> - <?php echo $client['first_name'].' '.$client['last_name'];?><br />
-                  <?php echo nl2br($client['address']);?></p></td>
-                  <td width="310px" style="text-align:right;vertical-align:top;">
-                      <?php echo logo(false, false, 2);?>
-                                <p><?php echo nl2br(Settings::get('mailing_address')); ?></p>
-                      <p>
-                          <span id="invoice_number2"><strong><?php echo __('projects:project');?>:</strong> <?php echo $project;?><br /></span> 
-                          <span id="invoice_date2"><strong><?php echo __('partial:dueon');?>: </strong><?php echo $project_due_date ? format_date($project_due_date) : '<em>n/a</em>';?><br /></span>
-                          <span id="invoice_date2"><strong><?php echo __('timesheet:totalbillable');?>: </strong><?php echo $total_hours;?><br /></span>
-                  </p></td>
+                    <td class="invoice-id"><span class="h5"><?php echo __('projects:project');?>:</span> <span><?php echo $project;?></span></td>
+                    <td class="spacer">&nbsp;</td>
+                    <td class="invoice-date"><span class="h5"><?php echo __('partial:dueon');?>:</span> <span><?php echo $project_due_date ? format_date($project_due_date) : '<em>n/a</em>';?></span></td>
+                    <td class="invoice-due"><span class="h5"><?php echo __('timesheet:totalbillable');?>: </strong><?php echo $total_hours;?></span></td>
                 </tr>
-              </table>
-              <br /> <br />
-            </div>
-		  </div><!-- /clientInfo -->
-            </div><!-- /header -->
+            </table>                            
+                        
             <?php echo $template['body']; ?>
+            
             <div id="footer">
-
             </div><!-- /footer --><!-- /wrapper -->
-
         </div>
     </body>
-    
 </html>

@@ -11,40 +11,65 @@
    Copyright 2011 Pancake Payments (http://pancakeapp.com). All rights reserved.
 */
 
-
-
 #buttonBar {
-	height:55px;
+	height:50px;
 	width:100%;
 	display:block;
 	text-align:right;
   	position:fixed;
-        z-index: 4;
+    z-index: 4;
 	top:0;
 	left:0;
-	background:#142C35;
-	color: #515151;
-	font-family: Arial;
-	font-size: 15px;
+	background: #3a3a3a;
+	color: #fff;
 	line-height: 21px;
+    border-bottom: 1px solid #fff;
 }
+
+.buttonContainer {
+    width:1110px;
+    margin:0 auto;
+}
+
+#buttonHolders {
+	float: right;
+}
+
+#buttonLeft {
+    float: left;
+}
+
+
 
 #buttonBar a {
 	float:right;
-	margin:10px 0px 0 10px;
-	padding:5px 10px;
-	border:1px solid #ccc;
-	background:#D0DFEB;
-	color:#555;
+	padding:15px 10px 10px 10px;
+	color:#999;
+    margin: 0 2px;
 	text-decoration:none;
-	
+    border-bottom: 3px solid transparent;
+    text-align: center;
+    text-shadow: none;
+    
+    -webkit-transition: .2s ease-in-out all;
+    -moz-transition: .2s ease-in-out all;
+    transition: .2s ease-in-out all;    
 }
 
+#buttonBar a:hover {
+    background: #3f3f3f;
+    border-bottom-color: #33B5E5;
+    /* Saf4+, Chrome */
+    color: #fff;
+    cursor: pointer;
+    text-shadow:none;
+}
 
-
-#buttonHolders {
-	width:935px;
-	margin:0 auto;
+.invoice .paidon, .button-bar-text {
+	float:left;
+	margin-left:5px;
+	margin-top:16px;
+    text-shadow: none;
 }
 
 .proposal .sidebar a {
@@ -52,8 +77,75 @@
 	text-decoration:none;
 }
 
-#buttonBar a, #login-box input.button, .button, .proposal .addSection, .proposal .addPage, .proposal .savePremadeSection, .proposal .addEstimate, .proposal .pickEstimate, .proposal .createEstimate, .proposal .addPremadeSection {
+/* Buttons */
+a.button, input.button, #buttonBar a.button{
+    font-family: 'Source Sans Pro', 'source sans pro', 'Open Sans', 'Helvetica', helvetica;
+	font-size:14px;
+    background: #ff4179;
+	margin-top: 8px;
+	font-weight: 600;
+	color:#fff !important;
+    line-height: 22px;
+    padding: 5px 14px;
+    height: 30px;
+    text-shadow: 1px 1px 1px #a6274c;
+    -webkit-box-shadow: 0 5px #a6274c,0px 5px 6px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 5px #a6274c,0px 5px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 5px #a6274c,0px 5px 6px rgba(0,0,0,0.3);
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-transition: .01s linear all, .2s ease-in-out background-color;
+    -moz-transition: .01s linear all, .2s ease-in-out background-color;
+    transition: .01s linear all, .2s ease-in-out background-color;
+    cursor: pointer;
+}
 
+a.button:hover, input.button:hover, #buttonBar a.button:hover {
+    background: #FF5C8C;
+    text-shadow: 1px 1px 1px #a6274c;
+    text-decoration:none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+a.button:active, input.button:active, #buttonBar a.button:active {
+    box-shadow: #A6274C 0 1px, 0px 1px 3px rgba(0,0,0,0.3);
+    -webkit-box-shadow: #A6274C 0 1px,0px 1px 3px rgba(0,0,0,0.3);
+    -moz-transform: translate(0,2px)!important;
+    -webkit-transform: translate(0,2px)!important;
+    -o-transform: translate(0,2px)!important;
+    -ms-transform: translate(0,2px)!important;
+    transform: translate(0,2px)!important;
+}
+
+a.button span {
+	cursor:pointer;
+	color: #fff !important;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, .4);
+}
+
+a.button.green {
+    background-color: #7FC24B;
+    text-shadow: 1px 1px 1px #4b7a29;
+    -webkit-box-shadow: 0 5px #4b7a29,0px 5px 6px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 5px #4b7a29,0px 5px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 5px #4b7a29,0px 5px 6px rgba(0,0,0,0.3);    
+}
+
+a.button.green:active {
+    box-shadow: #4b7a29 0 1px, 0px 1px 3px rgba(0,0,0,0.3);
+    -webkit-box-shadow: #4b7a29 0 1px,0px 1px 3px rgba(0,0,0,0.3);
+}
+
+a.button.green:hover {
+    background: #8eca62;
+}
+ 
+ /*
+
+#buttonBar a, #login-box input.button, .button, .proposal .addSection, .proposal .addPage, .proposal .savePremadeSection, .proposal .addEstimate, .proposal .pickEstimate, .proposal .createEstimate, .proposal .addPremadeSection {
 	margin:10px 0px 0 10px;
 	padding:5px 10px;
 	color:#555;
@@ -63,7 +155,7 @@
   border: 1px solid #bbb;
 
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#F3F6F9));
-  /* Saf4+, Chrome */
+  
   background-image: -webkit-linear-gradient(top, #FFFFFF, #F3F6F9);
   background-image: -moz-linear-gradient(top, #FFFFFF, #F3F6F9);
   background-image: -ms-linear-gradient(top, #FFFFFF, #F3F6F9);
@@ -92,7 +184,7 @@
     background: #D54518;
 
   background-image: -webkit-gradient(linear, left top, left bottom, from(#EF4C1A), to(#D54518));
-  /* Saf4+, Chrome */
+  
   background-image: -webkit-linear-gradient(top, #EF4C1A, #D54518);
   background-image: -moz-linear-gradient(top, #EF4C1A, #D54518);
   background-image: -ms-linear-gradient(top, #EF4C1A, #D54518);
@@ -112,7 +204,7 @@
     background: #D54518;
 
   background-image: -webkit-gradient(linear, left top, left bottom, from(#EF4C1A), to(#D54518));
-  /* Saf4+, Chrome */
+  
   background-image: -webkit-linear-gradient(top, #EF4C1A, #D54518);
   background-image: -moz-linear-gradient(top, #EF4C1A, #D54518);
   background-image: -ms-linear-gradient(top, #EF4C1A, #D54518);
@@ -128,12 +220,12 @@
     cursor: pointer;
 	text-shadow:none;
 }
-
+*/
 #buttonBar a.saved, #buttonBar a.green, #buttonBar a.accepted {
 	background: #D54518;
 
   background-image: -webkit-gradient(linear, left top, left bottom, from(#56D566), to(#08B71F));
-  /* Saf4+, Chrome */
+  
   background-image: -webkit-linear-gradient(top, #56D566, #08B71F);
   background-image: -moz-linear-gradient(top, #56D566, #08B71F);
   background-image: -ms-linear-gradient(top, #56D566, #08B71F);
@@ -154,7 +246,7 @@
 	background: #D54518;
 
   background-image: -webkit-gradient(linear, left top, left bottom, from(#EE2015), to(#CA1C12));
-  /* Saf4+, Chrome */
+  
   background-image: -webkit-linear-gradient(top, #EE2015, #CA1C12);
   background-image: -moz-linear-gradient(top, #EE2015, #CA1C12);
   background-image: -ms-linear-gradient(top, #EE2015, #CA1C12);
@@ -170,25 +262,3 @@
     cursor: pointer;
 	text-shadow:none;
 }
-
-
-/*  Old Buttons 
-#buttonBar a {
--webkit-box-shadow: black 0px 1px 0px;
--webkit-border-radius: 6px;
--moz-border-radius: 6px;
-border-radius: 6px;
-text-decoration: none;
-
-}
-#buttonBar a:hover {
-	
-    background:#fff; 
-}
-
-.button:active {
-    border-top-color: #1b435e;
-    background: #1b435e;
-    outline: 0;
-}
-*/

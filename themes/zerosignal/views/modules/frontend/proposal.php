@@ -1,6 +1,7 @@
 <div class="pageContainer">
     <?php foreach ($proposal['pages'] as $key => $page) : ?>
         <div class="page page-<?php echo $key; ?>" data-key="<?php echo $key; ?>">
+            <a name="page-<?php echo $key; ?>" class="jumptarget"></a>
             <div class="sectionContainer">
                 <?php foreach ($page['sections'] as $key => $section) : ?>
                     <div data-type="<?php echo $section['section_type'];?>" class="section section-<?php echo $key;?>" data-key="<?php echo $key;?>">
@@ -24,6 +25,7 @@
     <?php endforeach; ?>
 </div>
 <div class="page samplePage">
+    <a name=""></a>
     <div class="sectionContainer"></div>
     <a href="" class="addSection"><?php echo __('proposals:createsection');?></a>
     <a href="" class="addPremadeSection"><?php echo __('proposals:createpremadesection');?></a>
@@ -35,7 +37,13 @@
     <h3 class="section-subtitle editable"></h3>
     <div class="section-contents editable"></div>
 </div>
-<a href="" class="addPage"><?php echo __('proposals:createpage');?></a>
+<?php if(is_admin()):?>
+<div id="footer">
+    <a href="" class="addPage"><?php echo __('proposals:createpage');?></a>
+    <?php echo anchor('admin/proposals/all', __('proposals:save'), 'class="saveProposal button" data-saving="'.__('proposals:saving').'" data-saved="'.__('proposals:saved').'" data-save="'.__('proposals:save').'"'); ?>
+</div>
+<?php endif; ?>
+
 <script>
 pagexofcount = '<?php echo __('proposals:pagexofcount')?>';
 </script>

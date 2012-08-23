@@ -34,51 +34,42 @@
                         endif;
 			?>
 		</tbody>
-
-		
-		<?php /*<tfoot>
-			<tr class="Im-sorry-for-this">
-				<td colspan="5">
-					<?php if (!isset($is_estimate)) : ?>   
-						<?php $has_gateway = (count(Gateway::get_frontend_gateways($invoice['real_invoice_id'])) > 0); ?> 
-				        <?php if (count($invoice['partial_payments']) > 1) : ?>
-				        <h2 class="main-header-style orange" id="payment-plan-header"><?php echo __('partial:partialpayments');?></h2>
-				        <div class="payment-plan">
-				                    <ol>
-				                        <?php foreach ($invoice['partial_payments'] as $part) : ?>
-				                            <li>
-				                                <p>
-				                                    <span class="amount"><?php echo Currency::format($part['billableAmount'], $invoice['currency_code']); ?></span> <?php if ($part['due_date'] != 0) : ?><?php echo __('partial:dueondate', array('<span class="dueon">'.format_date($part['due_date']).'</span>'));?><?php endif; ?> <?php echo (empty($part['notes'])) ? '' : '- '.$part['notes']; ?> &raquo;
-				                                    <?php if (!$part['is_paid']) : ?>
-				                                    <?php if ($pdf_mode) : ?>
-				                                        <?php echo __('partial:topaynowgoto', array('<a href="'.$part['payment_url'].'">'.$part['payment_url'].'</a>'));?>
-				                                    <?php else: ?>
-				                                    	<?php if ($has_gateway): ?>
-				                                        <?php echo anchor($part['payment_url'], __('partial:proceedtopayment'), 'class="simple-button"'); ?>
-				                                    	<?php endif ?>
-				                                    <?php endif; ?>
-				                                    <?php else: ?>
-				                                        <?php echo __('partial:partpaidthanks');?>
-				                                    <?php endif; ?>
-				                                </p>
-				                            </li>
-				                        <?php endforeach; ?>
-				                    </ol>
-				            </div>
-				        <?php endif;?>
-					<?php endif ; ?>
-					<div class="really-I-am"></div>
-				</td>
-			</tr>
-		</tfoot> */ ?>
 	</table>
-    
-    
     
     <div class="table-meta">
         <div class="invoice-extra">
+            <?php if (!isset($is_estimate)) : ?>   
+                <?php $has_gateway = (count(Gateway::get_frontend_gateways($invoice['real_invoice_id'])) > 0); ?> 
+                <?php if (count($invoice['partial_payments']) > 1) : ?>
+                <h5 class="main-header-style" id="payment-plan-header"><?php echo __('partial:partialpayments');?></h5>
+                <div class="payment-plan">
+                    <ol>
+                        <?php foreach ($invoice['partial_payments'] as $part) : ?>
+                            <li>
+                                <p>
+                                    <span class="amount"><?php echo Currency::format($part['billableAmount'], $invoice['currency_code']); ?></span> <?php if ($part['due_date'] != 0) : ?><?php echo __('partial:dueondate', array('<span class="dueon">'.format_date($part['due_date']).'</span>'));?><?php endif; ?> <?php echo (empty($part['notes'])) ? '' : '- '.$part['notes']; ?> &raquo;
+                                    <?php if (!$part['is_paid']) : ?>
+                                    <?php if ($pdf_mode) : ?>
+                                        <?php echo __('partial:topaynowgoto', array('<a href="'.$part['payment_url'].'">'.$part['payment_url'].'</a>'));?>
+                                    <?php else: ?>
+                                        <?php if ($has_gateway): ?>
+                                        <?php echo anchor($part['payment_url'], __('partial:proceedtopayment'), 'class="simple-button"'); ?>
+                                        <?php endif ?>
+                                    <?php endif; ?>
+                                    <?php else: ?>
+                                        <?php echo __('partial:partpaidthanks');?>
+                                    <?php endif; ?>
+                                </p>
+                            </li>
+                        <?php endforeach; ?>
+                    </ol>
+                </div>
+                <?php endif; ?>
+			<?php endif ; ?>            
+            
             <div class="invoice-notes">
             <?php if (!empty($invoice['notes'])): ?>
+                <h5>Notes</h5>
                 <?php echo auto_typography($invoice['notes']);?>
             <?php endif; ?>
             </div>
@@ -127,7 +118,6 @@
             </div>            
             <?php endif; ?>
             <?php // END Taxes section ?>            
-            
         </div>
         <div class="invoice-totals">
             <table>

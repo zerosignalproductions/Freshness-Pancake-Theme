@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
@@ -24,25 +23,21 @@
 </head>
 
 <body class="report <?php echo is_admin() ? 'admin' : 'not-admin';?> <?php echo $pdf_mode ? 'pdf pdf_mode' : 'not-pdf';?>">
-<?php if( ! $pdf_mode): ?>
-	<div id="buttonBar">
-
-		<div id="buttonHolders">
-		<?php if (is_admin()): ?>
-			<?php echo anchor('admin', 'Go to Admin &rarr;', 'class="button"'); ?>
-		<?php endif; ?>
-		<div id="pdf">
-			<a href="<?php echo $report_url_pdf; ?>" title="Download PDF" id="download_pdf" class="button">Download PDF</a>
-		</div><!-- /pdf -->
-		</div><!-- /buttonHolders -->
-
-	</div><!-- /buttonBar -->
-<?php endif; ?>
+    <?php if( ! $pdf_mode): ?>
+        <div id="buttonBar">
+            <div id="buttonHolders">
+            <?php if (is_admin()): ?>
+                <?php echo anchor('admin', 'Go to Admin &rarr;'); ?>
+            <?php endif; ?>
+            
+            <div id="pdf">
+                <a href="<?php echo $report_url_pdf; ?>" title="Download PDF" id="download_pdf" class="button">Download PDF</a>
+            </div><!-- /pdf -->
+            </div><!-- /buttonHolders -->
+        </div><!-- /buttonBar -->
+    <?php endif; ?>
 	<div id="wrapper">
-
 		<div id="header">
-
-
 			<div id="clientInfo">
             <div id="envelope2">
               <table cellspacing="5" cellpadding="5">
@@ -57,15 +52,13 @@
               <br /> <br />
             </div>
 		  </div><!-- /clientInfo -->
-
-
-
 		</div><!-- /header -->
-<?php echo $template['body']; ?>
-		<div id="footer">
+        
+        <?php echo $template['body']; ?>
+		
+        <div id="footer">
 
 		</div><!-- /footer --><!-- /wrapper -->
-
 </div>
 </body>
 </html>

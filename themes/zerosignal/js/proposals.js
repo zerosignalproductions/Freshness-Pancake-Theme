@@ -129,13 +129,19 @@ function autosave() {
 }
 
 function fixKeys() {
-    
     $('.page:not(:last-child):not(.samplePage)').each(function() {if ($(this).find('.section').length == 0) {$(this).remove()}});
     
     $('.sidebar, .pageContainer').each(function() {
         var page_key = 1;
         $(this).find('.page:not(.samplePage)').each(function() {
-            $(this).removeClass('page-'+$(this).data('key')).data('key', page_key).addClass('page-'+page_key).find('.pageCount').html(pagexofcount.replace(':1', page_key).replace(':2', '<span class="pageTotal">'+$('.sidebar .page').length+'</span>'));
+            $(this)
+                .removeClass('page-'+$(this)
+                .data('key'))
+                .data('key', page_key)
+                .addClass('page-'+page_key)
+                .find('.pageCount')
+                .html(pagexofcount.replace(':1', page_key)
+                .replace(':2', '<span class="pageTotal">'+$('.sidebar .page').length+'</span>'));
             page_key++;
             var key = 1;
            $(this).find('.section').each(function() {
@@ -437,11 +443,12 @@ $('.proposal.admin').each(function() {
     $('.addPage').click(function() {
         var newKey  = $('.page:last-child').data('key') + 1;
         var newPage = $('.samplePage').clone().removeClass('samplePage').data('key', newKey).addClass('page-'+newKey).hide();
+        $(newPage).children("a").first().attr("name", 'page-'+newKey).addClass("jumptarget");
         $('.pageContainer').append(newPage.fadeIn());
         pageCount = $('.pageContainer .page').length;
         $('.pageTotal').html(pageCount);
         var newpagexofcount = pagexofcount.replace(':1', newKey).replace(':2', '<span class="pageTotal">'+pageCount+'</span>');
-        var newLi = $('<li class="page page-'+newKey+'" data-key="'+newKey+'"><span class="pageCount">'+newpagexofcount+'</span><ul></ul></li>').hide();
+        var newLi = $('<li class="page page-'+newKey+'" data-key="'+newKey+'"><a href="#page-'+newKey+'"><span class="pageCount">'+newpagexofcount+'</span></a><ul></ul></li>').hide();
         $('.sidebar > ul').append(newLi.fadeIn());
         makeSortable();
         autosave();

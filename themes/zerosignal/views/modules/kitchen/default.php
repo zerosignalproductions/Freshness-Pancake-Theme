@@ -1,38 +1,16 @@
+<div id="header">
+    <div id="envelope">
+        <h1><span>Dashboard</span></h1>
+    </div>
+    
+    <?php //load the Info Boxes ?>
+    <?php include($this->template->get_theme_path().'views/info.php'); ?>    
+</div>
+
 <div id="content">
-    <table class="invoice-contact">
-        <tr class="row">
-            <td id="company-info-holder">
-                <ul class="info">
-                    <li class="logo"><?php echo logo(false, false, 2);?></li>
-                    <li class="address"><h5>Address:</h5> <?php echo nl2br(Settings::get('mailing_address')); ?></li>
-                    <li class="phone"><h5>Phone:</h5> 512-552-1536</li>
-                    <li class="email"><h5>Email:</h5> <?php echo nl2br(Settings::get('notify_email')); ?></li>
-                    <li class="fax"><h5>Fax:</h5> </li>
-                </ul>
-            </td>
-
-            <td id="invoice-details-holder">
-                <div id="clientInfo">
-                    <div id="billing-info">
-                        <ul class="info">
-                            <?php if($client->company): ?>
-                                <li class="logo"><h2><?php echo $client->company;?></h2></li>
-                            <?php endif; ?>
-                            <li class="address"><h5>Address: </h5><?php echo nl2br($client->address);?></li>
-                            <li><h5>Contact: </h5> <?php echo $client->first_name.' '.$client->last_name;?></li>
-                            <li class="email"><h5>Email:</h5> <?php echo $client->email; ?></li>
-                            <li class="phone"><h5>Phone:</h5> <?php echo $client->phone; ?></li>
-                        </ul>
-                    </div>
-                </div><!-- /clientInfo -->
-            </td>                        
-        </tr>
-    </table>    
-
+    
 <?php if (group_has_role('invoices', 'view') or !logged_in()) : ?>
-
 	<?php if (count($invoices)): ?>
-	
     <div class="header">
         <div class="envelope">
             <h2><span>Invoices</span></h2>
@@ -67,13 +45,9 @@
         </tbody>
 		<?php endforeach ?>
 	</table>
-
-	
 	<?php endif; //END INVOICE COUNT ?>
 
-
 	<?php if (count($estimates) or !logged_in()): ?>
-
     <div class="header">
         <div class="envelope">
             <h2><span>Estimates</span></h2>
@@ -107,31 +81,36 @@
 		<?php endforeach ?>
 	</table>
 	<?php endif //END ESTIMATE COUNT ?>
-
 <?php endif; // END CAN VIEW INVOICES ?>
 
-
-
 <?php if (group_has_role('projects', 'view') or !logged_in()) : ?>
-	<?php if ($projects): ?>
-	
+	<?php if ($projects): ?>	
     <div class="header">
         <div class="envelope">
             <h2><span>Projects</span></h2>
         </div>
     </div>
     
-
 	<?php $prev_milestone = null; ?>
 	<?php foreach ($projects as $project): ?>
 		
 		<div id="project-<?php echo $project->id; ?>-holder" class="project">
-
-		
+	
 		<h4><?php echo $project->name; ?></h4>
-		<p style="font-size:12px; color:#ccc"><?php echo lang('projects:due_date') ?>: <?php echo format_date($project->due_date); ?><br>
+		<p><?php echo lang('projects:due_date') ?>: <?php echo format_date($project->due_date); ?><br>
 		<?php echo lang('projects:is_completed') ?>: <?php echo ($project->completed ? 'Yes' : 'No'); ?><br>
 		<?php echo anchor('clients/'.$client->unique_id.'/comments/project/'.$project->id, 'Comments ('.$project->total_comments.')'); ?></p>
+        
+        
+        <table class="invoice-meta">
+            <tr>
+                <td class="invoice-id"><span><?php echo $project->name; ?></span></td>
+                <td class="spacer">&nbsp;</td>
+                <td class="invoice-date"><?php echo lang('projects:due_date') ?>: <?php echo format_date($project->due_date); ?></td>
+                <td class="invoice-due"><?php echo anchor('clients/'.$client->unique_id.'/comments/project/'.$project->id, 'Comments ('.$project->total_comments.')'); ?></td>
+            </tr>
+        </table>                        
+                        
 
 		<div id="project-details-holder">
 		<table class="data-table projects" cellpadding="0" cellspacing="0">
@@ -208,8 +187,6 @@
 	<?php endif ?>
 <?php endif; //END CAN VIEW PROJECTS ?>
 
-
-
 <?php if (group_has_role('proposals', 'view') or !logged_in()) : ?>
 	<?php if (count($proposals)): ?>
 	
@@ -221,36 +198,31 @@
 
 	<table class="data-table proposals" cellpadding="0" cellspacing="0">
 		<thead>
-		<tr>
-			<th><?php echo lang('proposals:number') ?></th>
-			<th><?php echo lang('proposals:proposal') ?></th>
-			<th><?php echo lang('proposals:estimate') ?></th>
-			<th><?php echo lang('proposals:status') ?></th>
-			<th><?php  echo __('global:notes') ?></th>
-		</tr>
+            <tr>
+                <th><?php echo lang('proposals:number') ?></th>
+                <th><?php echo lang('proposals:proposal') ?></th>
+                <th><?php echo lang('proposals:estimate') ?></th>
+                <th><?php echo lang('proposals:status') ?></th>
+                <th><?php  echo __('global:notes') ?></th>
+            </tr>
 		</thead>
-		<?php foreach ($proposals as $proposal): ?>
+        <tbody>
+            <?php foreach ($proposals as $proposal): ?>
 			<tr class="items-desc-row">
-			<td><?php echo $proposal->proposal_number; ?></td>
-			<td><?php echo $proposal->title; ?></td>
-			<td><?php echo ($proposal->amount > 0 ? Currency::format($proposal->amount) : lang('proposals:na')); ?></td>
-			<td><?php echo __('proposals:' . (!empty($proposal->status) ? strtolower($proposal->status) : 'noanswer'), array(format_date($proposal->last_status_change))); ?></td>
-			<td>
-				<?php echo anchor('proposal/'.$proposal->unique_id, lang('proposals:view')); ?>
-				<?php echo anchor(Settings::get('kitchen_route').'/'.$client->unique_id.'/comments/proposal/'.$proposal->id, 'Comments ('.$proposal->total_comments.')'); ?>
-			</td>
-		</tr>
-		<tr class="border-bottom">
-			<td colspan="5">
-				<div id="border-holder-bottom">
-				</div><!-- /border-holder-bottom -->
-			</td>
-		</tr>
-		<?php endforeach ?>
+                <td><?php echo $proposal->proposal_number; ?></td>
+                <td><?php echo $proposal->title; ?></td>
+                <td><?php echo ($proposal->amount > 0 ? Currency::format($proposal->amount) : lang('proposals:na')); ?></td>
+                <td><?php echo __('proposals:' . (!empty($proposal->status) ? strtolower($proposal->status) : 'noanswer'), array(format_date($proposal->last_status_change))); ?></td>
+                <td>
+                    <?php echo anchor('proposal/'.$proposal->unique_id, lang('proposals:view')); ?>
+                    <?php echo anchor(Settings::get('kitchen_route').'/'.$client->unique_id.'/comments/proposal/'.$proposal->id, 'Comments ('.$proposal->total_comments.')'); ?>
+                </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
 	</table>
 
 	<?php endif ?>
 <?php endif; // END CAN VIEW PROPOSALS ?>
-
 
 </div><!-- /projects -->
