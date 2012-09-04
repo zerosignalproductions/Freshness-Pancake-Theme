@@ -18,6 +18,27 @@
 ;window.Modernizr=function(a,b,c){function z(a,b){var c=a.charAt(0).toUpperCase()+a.substr(1),d=(a+" "+m.join(c+" ")+c).split(" ");return y(d,b)}function y(a,b){for(var d in a)if(j[a[d]]!==c)return b=="pfx"?a[d]:!0;return!1}function x(a,b){return!!~(""+a).indexOf(b)}function w(a,b){return typeof a===b}function v(a,b){return u(prefixes.join(a+";")+(b||""))}function u(a){j.cssText=a}var d="2.0.6",e={},f=b.documentElement,g=b.head||b.getElementsByTagName("head")[0],h="modernizr",i=b.createElement(h),j=i.style,k,l=Object.prototype.toString,m="Webkit Moz O ms Khtml".split(" "),n={},o={},p={},q=[],r,s={}.hasOwnProperty,t;!w(s,c)&&!w(s.call,c)?t=function(a,b){return s.call(a,b)}:t=function(a,b){return b in a&&w(a.constructor.prototype[b],c)},n.csstransitions=function(){return z("transitionProperty")};for(var A in n)t(n,A)&&(r=A.toLowerCase(),e[r]=n[A](),q.push((e[r]?"":"no-")+r));u(""),i=k=null,e._version=d,e._domPrefixes=m,e.testProp=function(a){return y([a])},e.testAllProps=z;return e}(this,this.document);
 $('html').addClass(Modernizr.csstransitions ? 'csstransitions' : 'no-csstransitions');
 
+$(window).load(function() {
+    $("#page-list-container").mCustomScrollbar();
+    
+    $('#page-list').on('click', "a", function(event){
+        var anchor = $(this);
+ 
+        $('html, body').stop().animate({
+            scrollTop: $('#'+anchor.attr('href').split('#')[1]).offset().top
+        }, 1000,'easeInOutExpo');
+        /*
+        if you don't want to use the easing effects:
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1000);
+        */
+        event.preventDefault();
+    });    
+    
+});
+
+
 function fillFaceboxFromIframe(href, klass, height) {
     $.facebox.reveal('<iframe scrolling="no" marginwidth="0" width="920" frameborder="0" src="' + href + '" marginheight="0"></iframe>', klass)
 }
@@ -269,10 +290,10 @@ function stopEditing(discard) {
 }
 
 function makeSortable() {
-    $( ".sidebar > ul > li > ul, .sidebar > ul > li > ul > li > ul" ).sortable('destroy');
-    $( ".sidebar > ul > li > ul, .sidebar > ul > li > ul > li > ul" ).sortable({
+    $( "#page-list > li > ul, #page-list > li > ul > li > ul" ).sortable('destroy');
+    $( "#page-list > li > ul, #page-list > li > ul > li > ul" ).sortable({
         items: '> li', 
-        connectWith: $( ".sidebar > ul > li > ul, .sidebar > ul > li > ul > li > ul" ),
+        connectWith: $( "#page-list > li > ul, #page-list > li > ul > li > ul" ),
         dropOnEmpty: true,
         placeholder: 'empty',
         forcePlaceholderSize: true,
@@ -443,13 +464,14 @@ $('.proposal.admin').each(function() {
     $('.addPage').click(function() {
         var newKey  = $('.page:last-child').data('key') + 1;
         var newPage = $('.samplePage').clone().removeClass('samplePage').data('key', newKey).addClass('page-'+newKey).hide();
-        $(newPage).children("a").first().attr("name", 'page-'+newKey).addClass("jumptarget");
+        $(newPage).children("a").first().attr({ "name": 'page-'+newKey, "id": 'page-'+newKey } ).addClass("jumptarget");
         $('.pageContainer').append(newPage.fadeIn());
         pageCount = $('.pageContainer .page').length;
         $('.pageTotal').html(pageCount);
         var newpagexofcount = pagexofcount.replace(':1', newKey).replace(':2', '<span class="pageTotal">'+pageCount+'</span>');
         var newLi = $('<li class="page page-'+newKey+'" data-key="'+newKey+'"><a href="#page-'+newKey+'"><span class="pageCount">'+newpagexofcount+'</span></a><ul></ul></li>').hide();
-        $('.sidebar > ul').append(newLi.fadeIn());
+        $('#page-list').append(newLi.fadeIn());
+        $("#page-list-container").mCustomScrollbar("update");
         makeSortable();
         autosave();
         return false;

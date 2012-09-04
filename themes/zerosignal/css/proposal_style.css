@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-#container {
+#container, .container {
     width: 1140px;
     position: relative;
     margin: 0 auto;
@@ -39,6 +39,13 @@ h1, h2, h3, h4, h5, h6 {
 .proposal.not-pdf #wrapper {
 	margin:auto 0;
 	padding: 0 0 0 320px;
+}
+
+#page-list-container {
+    position: absolute;
+    top: 90px;
+    bottom: 0;
+    width: 290px;
 }
 
 .proposal div.page {
@@ -95,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .proposal .sidebar span.pageCount {
-	color:#ccc;
+	
 }
 .proposal .title {
 	display:block;
@@ -111,8 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 	position: fixed;
 	width:290px;
 	top: 65px;
-	
-	height:100%;
+    bottom: 65px;
 	background: #f2f2f2 url('../img/proposal_logo.png') 20px 20px no-repeat;
 	padding: 0px 0 0 25px;
 	color: #555;
@@ -202,7 +208,7 @@ h1, h2, h3, h4, h5, h6 {
 	display:none;
 }
 
-.proposal .addSection, .proposal .addPage, .proposal .sidebar a, .proposal .savePremadeSection, .proposal .addEstimate, .proposal .pickEstimate, .proposal .createEstimate, .proposal .addPremadeSection {
+.proposal .addSection, .proposal .sidebar a, .proposal .savePremadeSection, .proposal .addEstimate, .proposal .pickEstimate, .proposal .createEstimate, .proposal .addPremadeSection {
 /*	background: #007BCF;
 	color: white;
 	display: inline-block;
@@ -210,6 +216,14 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 8px;
 	text-decoration: none; */
 	display: inline-block;
+}
+
+.proposal .addPage {
+    float: right;
+}
+
+.proposal .saveProposal {
+    float: left;
 }
 
 .proposal .estimate-link-container {margin-top:17px;width:360px;}
@@ -328,7 +342,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #footer a {
     color: #fff;
+    margin-top: 0;
 }
+
+
 
 /* =========================== */
 /* = Proposal Estimate Table = */

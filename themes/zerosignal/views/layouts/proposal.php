@@ -14,6 +14,7 @@
         <?php echo asset::css('proposal_style.css', array('media' => 'all'), NULL, $pdf_mode); ?>
         <?php echo asset::css('pancake_bar_style.css', array('media' => 'all'), NULL, $pdf_mode); ?>
         <?php echo asset::css('facebox.css', array('media' => 'screen'), NULL, $pdf_mode); ?>
+        <?php echo asset::css('jquery.mCustomScrollbar.css', array('media' => 'screen'), NULL, $pdf_mode); ?>
         <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,700,600italic' rel='stylesheet' type='text/css'>
 	
 	<?php if (Settings::get('frontend_css')): ?>
@@ -33,8 +34,15 @@
         </script>
         
         <!-- Grab Google CDN's jQuery and jQuery UI, with a protocol relative URL; fall back to local if necessary -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js"></script>
-        <script>window.jQuery || document.write('<script src="<?php echo asset::get_src('jquery-1.6.4.min.js', 'js');?>">\x3C/script>')</script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script>!window.jQuery && document.write(unescape('%3Cscript src="jquery/jquery-1.7.2.min.js"%3E%3C/script%3E'))</script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+        <script>!window.jQuery.ui && document.write(unescape('%3Cscript src="jquery/jquery-ui-1.8.21.custom.min.js"%3E%3C/script%3E'))</script>
+
+       	<script src="<?php echo asset::get_src('jquery.mousewheel.min.js'); ?>"></script>
+        <!-- custom scrollbars plugin -->
+        <script src="<?php echo asset::get_src('/jquery.mCustomScrollbar.min.js'); ?>"></script>    
+
         
         <?php if (is_admin()) :?>
         <script src="<?php echo asset::get_src('jquery-ui-1.8.13.sortable.min.js', 'js');?>"></script>
@@ -53,12 +61,12 @@
             
             <div id="buttonLeft">
                 <?php if(is_admin()): ?>
-                    <?php echo anchor('admin', 'Mark as unanswered', 'class="unanswer button"'); ?>
-                    <?php echo anchor('admin', 'Mark as accepted', 'class="admin accept button"'); ?>
-                    <?php echo anchor('admin', 'Mark as rejected', 'class="admin reject button"'); ?>
+                    <?php echo anchor('admin', 'Mark as unanswered', 'class="unanswer button grey"'); ?>
+                    <?php echo anchor('admin', 'Mark as accepted', 'class="admin accept button green"'); ?>
+                    <?php echo anchor('admin', 'Mark as rejected', 'class="admin reject button red"'); ?>
                 <?php else: ?>                
-                    <?php echo anchor('admin', 'Reject proposal', 'class="client reject button"'); ?>
-                    <?php echo anchor('admin', 'Accept proposal', 'class="client accept button"'); ?>
+                    <?php echo anchor('admin', 'Reject proposal', 'class="client reject button red"'); ?>
+                    <?php echo anchor('admin', 'Accept proposal', 'class="client accept button green"'); ?>
                 <?php endif; ?>
                 
             </div>
@@ -70,8 +78,8 @@
             <?php else: ?>
                 <?php echo anchor('proposal/'.$proposal['unique_id'].'/pdf', __('global:downloadpdf'), 'target="_blank" class="button"'); ?>
             <?php endif; ?>            
-                <?php echo anchor('admin', 'Proposal Rejected', 'class="rejected button"'); ?>
-                <?php echo anchor('admin', 'Proposal Accepted', 'class="accepted button"'); ?>
+                <?php echo anchor('admin', 'Proposal Rejected', 'class="rejected button red"'); ?>
+                <?php echo anchor('admin', 'Proposal Accepted', 'class="accepted button green"'); ?>
             </div><!-- /buttonHolders -->
         </div>
 	</div><!-- /buttonBar -->
@@ -98,26 +106,28 @@
         <div class="sidebar">
              <?php echo logo(false, false);?>
                 <h2><?php echo lang('proposal:outline') ?></h2>
-                <ul>
-                    <?php foreach ($proposal['pages'] as $key => $page) : ?>
-                    <li class="page page-<?php echo $key;?>" data-key="<?php echo $key;?>">
-                        <a href="#page-<?php echo $key;?>"><span class="pageCount">Page <?php echo $key;?> of <span class="pageTotal"><?php echo count($proposal['pages']);?></span></span></a>
-                        <ul>
-                            <?php foreach ($page['sections'] as $section) : ?>
-                                <li class="section section-<?php echo $section['key'];?>" data-key="<?php echo $section['key'];?>"><span><?php echo empty($section['title']) ? __('proposals:emptysection') : $section['title']; ?></span>
-                                    <ul>
-                                        <?php if (isset($section['sections'])) :?>
-                                            <?php foreach ($section['sections'] as $subsection) :?>
-                                                <li class="section subsection section-<?php echo $subsection['key'];?>" data-key="<?php echo $subsection['key'];?>" ></li>
-                                            <?php endforeach; ?>
-                                        <?php endif;?>
-                                    </ul>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                    <?php endforeach; ?>
-                </ul>
+                <div id="page-list-container">
+                    <ul id="page-list">
+                        <?php foreach ($proposal['pages'] as $key => $page) : ?>
+                        <li class="page page-<?php echo $key;?>" data-key="<?php echo $key;?>">
+                            <a href="#page-<?php echo $key;?>"><span class="pageCount">Page <?php echo $key;?> of <span class="pageTotal"><?php echo count($proposal['pages']);?></span></span></a>
+                            <ul>
+                                <?php foreach ($page['sections'] as $section) : ?>
+                                    <li class="section section-<?php echo $section['key'];?>" data-key="<?php echo $section['key'];?>"><span><?php echo empty($section['title']) ? __('proposals:emptysection') : $section['title']; ?></span>
+                                        <ul>
+                                            <?php if (isset($section['sections'])) :?>
+                                                <?php foreach ($section['sections'] as $subsection) :?>
+                                                    <li class="section subsection section-<?php echo $subsection['key'];?>" data-key="<?php echo $subsection['key'];?>" ></li>
+                                                <?php endforeach; ?>
+                                            <?php endif;?>
+                                        </ul>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
         </div>
         <div id="wrapper">
             <div class="editing-container"><div class="editing"><a href="" class="confirm"> Accept</a>  <a href="" class="cancel"> Discard </a></div></div>
@@ -161,6 +171,5 @@
             <!-- /footer --><!-- /wrapper -->
             </div>
         </div>
-    </body>
-    
+    </body>    
 </html>

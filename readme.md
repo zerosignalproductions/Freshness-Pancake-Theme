@@ -2,9 +2,6 @@
 
 **Freshness** is a brand new theme brought to you by Zero Signal Productions for Pancake, an excellent billing and invoice application. We wanted the theme to work with the playfulness of the Pancake brand so we use the same bright colors and button styles as the original theme but with an added kick.
 
-We're also working on the front-end theme and will hopefully have that out pretty soon!
-
-
 ## How to Install ##
 
 Download the zip file and simply unzip into your **third_party** directory. 
@@ -23,6 +20,17 @@ Activate **zerosignal** in **Settings > General > Admin Theme**
 
 **Front-end** - WIP
 
+How do add your phone/fax to the invoice:
+
+`.fax         { display: block; }
+.fax:after   { content: "fax number"; }
+
+.phone       { display: block; }
+.phone:after { content: "phone number"; }`
+
+* Added Gravatar support to comment pages
+* Updated Proposal editor with new styling and usability features
+
 * [Invoicing](http://i.imgur.com/W6RTd.png)
 
 
@@ -30,10 +38,9 @@ Activate **zerosignal** in **Settings > General > Admin Theme**
 
 I love giving back to the community but I'm always grateful if you send a few bucks my way to show me that you appreciate my work! Thanks for checking out Freshness and I hope you enjoy it.
 
-[![test](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=sales%40zerosignalproductions%2ecom&lc=US&item_name=Zero%20Signal%20Productions&amount=10%2e00&currency_code=USD&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest)
+[![I like making stuff but spend way too much time on it!](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=sales%40zerosignalproductions%2ecom&lc=US&item_name=Zero%20Signal%20Productions&amount=10%2e00&currency_code=USD&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest)
 
 ## TODO ##
-* Front-end Theming - In progress!
 * Proposal Editor Theming
 * Safari, IE8 Testing
 * Mobile Support
