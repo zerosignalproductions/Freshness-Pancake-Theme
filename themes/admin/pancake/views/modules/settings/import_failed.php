@@ -1,0 +1,3 @@
+<h2 class="import-field-title">Pancake could not import your file.</h2>
+<p class="import-failed strong">We've never seen this type of file before, and as such, Pancake does not understand it, yet.</p>
+<p class="import-failed">We'd like to teach Pancake to understand it so you can import it, and for that, we'll need your help. If you want to be able to import this file, please email us at support@pancakeapp.com and we will update Pancake's import tool to understand this file. Don't worry, Pancake learns fast and we try to teach Pancake to understand any file within a few days or so. ;)</p>
